@@ -63,15 +63,15 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="flex max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="w-2/3">
+      <div className="flex flex-col md:flex-row max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="w-full md:w-2/3">
           <img
             src={heroImage}
             alt="The Killers"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-1/3 p-8 text-center">
+        <div className="w-full md:w-1/3 p-8 text-center">
           <h1 className="text-4xl font-extrabold text-blue-600 mb-2">The Killers</h1>
           <p className="text-xl font-semibold text-green-500 mb-4">Hot Fuss Anniversary Tour</p>
           <p className="text-lg text-gray-800 mb-2">Thursday, February 15, 2024</p>
@@ -80,7 +80,7 @@ const Home = () => {
           <p className="text-lg text-gray-700 mb-2">Show: 20:00</p>
           <p className="text-lg text-gray-700 mb-2">Support: The Walkmen</p>
           <p className="text-lg font-bold text-red-600 mb-4">Price: 450 SEK</p>
-          <button className="bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg flex items-center text-lg mx-auto">
+          <button className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto">
             <span className="mr-2">🎟️</span> Book Tickets
           </button>
 
