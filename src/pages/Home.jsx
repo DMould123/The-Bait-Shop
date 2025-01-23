@@ -1,11 +1,11 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
+import heroImage from '../assets/the killers.jpeg';
+import modestImage from '../assets/modest.png';
+import deathcabImage from '../assets/deathcab.png';
+import thrillsImage from '../assets/Thrills.png';
+import rooneyImage from '../assets/rooney.png';
 
-// Import all images
-import heroImage from '../assets/sol.jpg';
-import modestImage from '../assets/sol.jpg';
-import deathcabImage from '../assets/sol.jpg';
-import walkmenImage from '../assets/sol.jpg';
 
 const upcomingConcerts = [
   {
@@ -44,7 +44,7 @@ const otherConcerts = [
     artist: 'Rooney',
     date: '2024-04-05',
     time: '20:00',
-    image: walkmenImage,
+    image: rooneyImage,
     price: '350 SEK'
   },
   {
@@ -52,7 +52,7 @@ const otherConcerts = [
     artist: 'The Thrills',
     date: '2024-04-12',
     time: '21:00',
-    image: walkmenImage,
+    image: thrillsImage,
     price: '350 SEK'
   }
 ];

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
-import logoImage from '../assets/theloft.png';
+import logoImage from '../assets/logo.png';
 
 const Navbar = ({ language, setLanguage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,16 +10,15 @@ const Navbar = ({ language, setLanguage }) => {
     <nav className="sticky top-0 z-50 bg-blue-900 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link to="/">
-              <h1 className="text-3xl font-bold text-orange-400 hover:text-orange-300 transition-colors">
-                The Bait Shop
-              </h1>
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
+              <img
+                src={logoImage}
+                alt="The Bait Shop Logo"
+                className="h-20 w-auto"
+              />
             </Link>
           </div>
-
-          {/* Hamburger Menu */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
