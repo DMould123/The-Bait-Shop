@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import heroImage from '../assets/the killers.jpeg';
+import heroImage from '../assets/the_killers.jpg';
 import modestImage from '../assets/modest.png';
 import deathcabImage from '../assets/deathcab.png';
 import thrillsImage from '../assets/Thrills.png';
@@ -13,7 +13,7 @@ const upcomingConcerts = [
     artist: 'The Killers',
     date: '2024-02-15',
     time: '20:00',
-    venue: 'The Bait Shop, Gothenburg',
+    venue: 'The Bait Shop',
     price: '450 SEK',
     description: 'Live in Concert - Hot Fuss Anniversary Tour',
     supportAct: 'Special Guests: The Walkmen',
@@ -61,9 +61,9 @@ const Home = () => {
   const [showDescription, setShowDescription] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative min-h-[80vh] bg-black">
+      <div className="relative min-h-[80vh] bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8 py-12">
             {/* Image Section */}
@@ -71,61 +71,55 @@ const Home = () => {
               <img
                 src={heroImage}
                 alt="The Killers"
-                className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
+                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
               />
             </div>
 
             {/* Concert Info Section */}
-            <div className="lg:w-1/2 text-white space-y-6">
+            <div className="lg:w-1/2 text-gray-800 space-y-6">
               <div className="space-y-2">
                 <h2 className="text-5xl font-bold tracking-tight">The Killers</h2>
-                <p className="text-xl text-gray-300">Hot Fuss Anniversary Tour</p>
+                <p className="text-xl text-gray-600">Hot Fuss Anniversary Tour</p>
               </div>
 
               <div className="space-y-4 text-lg">
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Date:</span>
+                  <span className="text-gray-500">Date:</span>
                   <span>Thursday, February 15, 2024</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Venue:</span>
-                  <span>The Bait Shop, Gothenburg</span>
+                  <span className="text-gray-500">Venue:</span>
+                  <span>The Bait Shop</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Doors:</span>
+                  <span className="text-gray-500">Doors:</span>
                   <span>19:00</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Show:</span>
+                  <span className="text-gray-500">Show:</span>
                   <span>20:00</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Support:</span>
+                  <span className="text-gray-500">Support:</span>
                   <span>The Walkmen</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400">Price:</span>
+                  <span className="text-gray-500">Price:</span>
                   <span>450 SEK</span>
                 </div>
               </div>
 
               <div className="pt-6 space-y-4">
-                <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg text-lg font-medium transition-colors">
+                <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-lg font-medium transition-colors">
                   Book Tickets
                 </button>
-                <Link
-                  to="/calendar"
-                  className="block text-center bg-transparent border-2 border-indigo-600 hover:bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-medium transition-colors"
-                >
-                  View All Events
-                </Link>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scrolling Marquee */}
-        <div className="absolute top-0 w-full bg-gradient-to-r from-indigo-600 to-purple-600 py-3">
+        <div className="absolute top-0 w-full bg-gray-700 py-3">
           <div className="animate-marquee whitespace-nowrap">
             {upcomingConcerts.map((concert) => (
               <span key={concert.id} className="mx-8 text-white font-medium">
@@ -139,10 +133,10 @@ const Home = () => {
       {/* Additional Content Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold">About The Show</h2>
+          <h2 className="text-3xl font-bold text-gray-800">About The Show</h2>
           <button
             onClick={() => setShowDescription(!showDescription)}
-            className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 transition-colors"
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
           >
             <span>{showDescription ? 'Show Less' : 'See More'}</span>
             <svg
@@ -175,7 +169,7 @@ const Home = () => {
 
         {/* Upcoming Concerts Grid */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8">More Upcoming Shows</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-8">More Upcoming Shows</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {otherConcerts.map((concert) => (
               <div
@@ -201,7 +195,7 @@ const Home = () => {
                     <span className="text-lg font-semibold">{concert.price}</span>
                     <span className="text-sm text-gray-500">Limited Tickets</span>
                   </div>
-                  <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg transition-colors text-sm font-medium">
+                  <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition-colors text-sm font-medium">
                     Book Now
                   </button>
                 </div>
