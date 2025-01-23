@@ -2,57 +2,58 @@ import {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 // Import all images
-import heroImage from '../assets/a_thestrokes.jpg';
-import tameImage from '../assets/tame.jpg';
-import solImage from '../assets/sol.jpg';
+import heroImage from '../assets/sol.jpg';
+import modestImage from '../assets/sol.jpg';
+import deathcabImage from '../assets/sol.jpg';
+import walkmenImage from '../assets/sol.jpg';
 
 const upcomingConcerts = [
   {
     id: 1,
-    artist: 'The Strokes',
+    artist: 'The Killers',
     date: '2024-02-15',
     time: '20:00',
-    venue: 'The Loft, Gothenburg',
+    venue: 'The Bait Shop, Gothenburg',
     price: '450 SEK',
-    description: 'Live in Concert - Room Temperature Tour 2024',
-    supportAct: 'Special Guests: Arctic Monkeys',
+    description: 'Live in Concert - Hot Fuss Anniversary Tour',
+    supportAct: 'Special Guests: The Walkmen',
     doorsOpen: '19:00',
-    image: heroImage  // Use imported image
+    image: heroImage
   }
 ];
 
 const otherConcerts = [
   {
     id: 1,
-    artist: 'Arctic Monkeys',
+    artist: 'Modest Mouse',
     date: '2024-03-15',
     time: '20:00',
-    image: heroImage,  // Use imported image
-    price: '450 SEK'
+    image: modestImage,
+    price: '400 SEK'
   },
   {
     id: 2,
-    artist: 'Tame Impala',
+    artist: 'Death Cab for Cutie',
     date: '2024-03-22',
     time: '19:30',
-    image: tameImage,  // Use imported image
+    image: deathcabImage,
     price: '400 SEK'
   },
   {
     id: 3,
-    artist: 'Shout Out Louds',
+    artist: 'Rooney',
     date: '2024-04-05',
     time: '20:00',
-    image: solImage,  // Use imported image
-    price: '500 SEK'
+    image: walkmenImage,
+    price: '350 SEK'
   },
   {
     id: 4,
-    artist: 'Foals',
+    artist: 'The Thrills',
     date: '2024-04-12',
     time: '21:00',
-    image: solImage,  // Use imported image
-    price: '450 SEK'
+    image: walkmenImage,
+    price: '350 SEK'
   }
 ];
 
@@ -69,7 +70,7 @@ const Home = () => {
             <div className="lg:w-1/2">
               <img
                 src={heroImage}
-                alt="The Strokes"
+                alt="The Killers"
                 className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
               />
             </div>
@@ -77,8 +78,8 @@ const Home = () => {
             {/* Concert Info Section */}
             <div className="lg:w-1/2 text-white space-y-6">
               <div className="space-y-2">
-                <h2 className="text-5xl font-bold tracking-tight">The Strokes</h2>
-                <p className="text-xl text-gray-300">Room Temperature Tour 2024</p>
+                <h2 className="text-5xl font-bold tracking-tight">The Killers</h2>
+                <p className="text-xl text-gray-300">Hot Fuss Anniversary Tour</p>
               </div>
 
               <div className="space-y-4 text-lg">
@@ -88,7 +89,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400">Venue:</span>
-                  <span>The Loft, Gothenburg</span>
+                  <span>The Bait Shop, Gothenburg</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400">Doors:</span>
@@ -100,7 +101,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400">Support:</span>
-                  <span>Arctic Monkeys</span>
+                  <span>The Walkmen</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400">Price:</span>
@@ -166,8 +167,8 @@ const Home = () => {
           showDescription ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
           <p className="text-lg text-gray-700 mb-12">
-            Don't miss The Strokes live at The Loft in Gothenburg! Join us for an unforgettable night
-            of music featuring special guests Arctic Monkeys. The Room Temperature Tour 2024 promises
+            Don't miss The Killers live at The Bait Shop in Gothenburg! Join us for an unforgettable night
+            of music featuring special guests The Walkmen. The Hot Fuss Anniversary Tour promises
             to be one of the most exciting shows of the year.
           </p>
         </div>
