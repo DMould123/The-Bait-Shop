@@ -32,7 +32,7 @@ const About = () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Sign Up for Our Newsletter</h2>
         <p className="text-gray-600 mb-4">Stay updated on upcoming shows, events, and exclusive offers!</p>
-        <form action="https://example.com/subscribe" method="POST" className="flex flex-col">
+        <form action="https://formspree.io/f/mjvdqpav" method="POST" className="flex flex-col">
           <input
             type="email"
             name="email"
