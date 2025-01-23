@@ -63,110 +63,48 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative min-h-[80vh] bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-8 py-12">
-            {/* Image Section */}
-            <div className="lg:w-1/2">
-              <img
-                src={heroImage}
-                alt="The Killers"
-                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
-              />
-            </div>
-
-            {/* Concert Info Section */}
-            <div className="lg:w-1/2 text-gray-800 space-y-6">
-              <div className="space-y-2">
-                <h2 className="text-5xl font-bold tracking-tight">The Killers</h2>
-                <p className="text-xl text-gray-600">Hot Fuss Anniversary Tour</p>
-              </div>
-
-              <div className="space-y-4 text-lg">
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Date:</span>
-                  <span>Thursday, February 15, 2024</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Venue:</span>
-                  <span>The Bait Shop</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Doors:</span>
-                  <span>19:00</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Show:</span>
-                  <span>20:00</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Support:</span>
-                  <span>The Walkmen</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Price:</span>
-                  <span>450 SEK</span>
-                </div>
-              </div>
-
-              <div className="pt-6 space-y-4">
-                <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg text-lg font-medium transition-colors">
-                  Book Tickets
-                </button>
-              </div>
-            </div>
-          </div>
+      <div className="flex max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="w-2/3">
+          <img
+            src={heroImage}
+            alt="The Killers"
+            className="w-full h-full object-cover"
+          />
         </div>
+        <div className="w-1/3 p-8 text-center">
+          <h1 className="text-4xl font-extrabold text-blue-600 mb-2">The Killers</h1>
+          <p className="text-xl font-semibold text-green-500 mb-4">Hot Fuss Anniversary Tour</p>
+          <p className="text-lg text-gray-800 mb-2">Thursday, February 15, 2024</p>
+          <p className="text-lg text-gray-700 mb-2">The Bait Shop</p>
+          <p className="text-lg text-gray-700 mb-2">Doors: 19:00</p>
+          <p className="text-lg text-gray-700 mb-2">Show: 20:00</p>
+          <p className="text-lg text-gray-700 mb-2">Support: The Walkmen</p>
+          <p className="text-lg font-bold text-red-600 mb-4">Price: 450 SEK</p>
+          <button className="bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg flex items-center text-lg mx-auto">
+            <span className="mr-2">🎟️</span> Book Tickets
+          </button>
 
-        {/* Scrolling Marquee */}
-        <div className="absolute top-0 w-full bg-gray-700 py-3">
-          <div className="animate-marquee whitespace-nowrap">
-            {upcomingConcerts.map((concert) => (
-              <span key={concert.id} className="mx-8 text-white font-medium">
-                {concert.artist} - {new Date(concert.date).toLocaleDateString()} - {concert.time} - {concert.venue}
-              </span>
-            ))}
+          {/* Read More Section */}
+          <div className="text-center mt-6">
+            <button
+              onClick={() => setShowDescription(!showDescription)}
+              className="text-blue-600 hover:underline"
+            >
+              {showDescription ? 'Read Less...' : 'Read More...'}
+            </button>
+          </div>
+
+          <div className={`prose max-w-none transition-all duration-300 ${showDescription ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+            <p className="text-lg text-gray-700 mb-12">
+              Don't miss The Killers live at The Bait Shop in Gothenburg! Join us for an unforgettable night
+              of music featuring special guests The Walkmen. The Hot Fuss Anniversary Tour promises
+              to be one of the most exciting shows of the year.
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Additional Content Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">About The Show</h2>
-          <button
-            onClick={() => setShowDescription(!showDescription)}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
-          >
-            <span>{showDescription ? 'Show Less' : 'See More'}</span>
-            <svg
-              className={`w-5 h-5 transform transition-transform ${
-                showDescription ? 'rotate-180' : ''
-              }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div className={`prose max-w-none transition-all duration-300 ${
-          showDescription ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
-          <p className="text-lg text-gray-700 mb-12">
-            Don't miss The Killers live at The Bait Shop in Gothenburg! Join us for an unforgettable night
-            of music featuring special guests The Walkmen. The Hot Fuss Anniversary Tour promises
-            to be one of the most exciting shows of the year.
-          </p>
-        </div>
-
         {/* Upcoming Concerts Grid */}
         <div className="mt-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">More Upcoming Shows</h2>
