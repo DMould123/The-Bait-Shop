@@ -82,16 +82,6 @@ const Home = ({ fullCalendar }) => {
             <span className="mr-2">🎟️</span> Book Tickets
           </button>
 
-          {/* Read More Section */}
-          <div className="text-center mt-6">
-            <button
-              onClick={() => setShowDescription(!showDescription)}
-              className="text-blue-600 hover:underline"
-            >
-              {showDescription ? 'Read Less...' : 'Read More...'}
-            </button>
-          </div>
-
           <div
             className={`prose max-w-none transition-all duration-300 ${
               showDescription

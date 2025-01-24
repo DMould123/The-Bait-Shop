@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe(
@@ -8,8 +8,9 @@ const stripePromise = loadStripe(
 const TicketPurchase = () => {
   const location = useLocation()
   const { tickets } = location.state || {}
+  const navigate = useNavigate()
 
-  console.log(tickets) // Check if tickets are correctly passed
+  console.log(tickets)
 
   const handleCheckout = async () => {
     console.log('Checkout button clicked')
@@ -43,16 +44,36 @@ const TicketPurchase = () => {
   }
 
   return (
-    <div>
-      <h1>Purchase Tickets for {tickets.artist}</h1>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold">Purchase Tickets for {tickets.artist}</h1>
       <p>Date: {tickets.date}</p>
+      <p>Time: {tickets.time}</p>
       <p>Price: {tickets.price}</p>
-      <button
-        className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto"
-        onClick={handleCheckout}
-      >
-        Proceed to Checkout
-      </button>
+      <p className="mt-4"><strong>Description:</strong> {tickets.blurb}</p>
+
+      {tickets.yt && (
+        <div className="mt-4">
+          <h2 className="text-lg font-semibold">Watch on YouTube:</h2>
+          <iframe
+            width="50%"
+            height="315"
+            src={tickets.yt.replace("watch?v=", "embed/")}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+
+      <div className="mt-4">
+        <button
+          className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg"
+          onClick={handleCheckout}
+        >
+          Proceed to Checkout
+        </button>
+      </div>
     </div>
   )
 }
