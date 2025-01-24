@@ -1,5 +1,5 @@
 const Success = () => {
-  return <h1>Payment Successful! Thank you for your purchase.</h1>;
-};
+  return <h1>Payment Successful! Thank you for your purchase.</h1>
+}
 
-export default Success;
+export default Success

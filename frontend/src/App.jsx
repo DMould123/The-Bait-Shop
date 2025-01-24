@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Calendar from './pages/Calendar';
-import Restaurant from './pages/Restaurant';
-import Faqs from './pages/Faqs';
-import About from './pages/About';
-import Home from './pages/Home';
-import Success from './pages/Success';
-import Cancel from './pages/Cancel';
-import TicketPurchase from './pages/TicketPurchase';
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Calendar from './pages/Calendar'
+import Restaurant from './pages/Restaurant'
+import Faqs from './pages/Faqs'
+import About from './pages/About'
+import Home from './pages/Home'
+import Success from './pages/Success'
+import Cancel from './pages/Cancel'
+import TicketPurchase from './pages/TicketPurchase'
 
 export default function App() {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('en')
   const fullCalendar = [
     {
       id: 1,
@@ -83,25 +83,30 @@ export default function App() {
       time: '20:00',
       price: '$20'
     }
-  ];
+  ]
 
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
-        <Navbar language={language} setLanguage={setLanguage} events={fullCalendar} fullCalendar={fullCalendar} />
+        <Navbar
+          language={language}
+          setLanguage={setLanguage}
+          events={fullCalendar}
+          fullCalendar={fullCalendar}
+        />
         <main className="container mx-auto px-4">
-        <Routes>
-  <Route path="/" element={<Home fullCalendar={fullCalendar} />} />
-  <Route path="/calendar" element={<Calendar />} />
-  <Route path="/restaurant" element={<Restaurant />} />
-  <Route path="/faqs" element={<Faqs />} />
-  <Route path="/about" element={<About />} />
-  <Route path="/success" element={<Success />} />
-  <Route path="/cancel" element={<Cancel />} />
-  <Route path="/ticket-purchase" element={<TicketPurchase />} />
-</Routes>
+          <Routes>
+            <Route path="/" element={<Home fullCalendar={fullCalendar} />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="/faqs" element={<Faqs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/cancel" element={<Cancel />} />
+            <Route path="/ticket-purchase" element={<TicketPurchase />} />
+          </Routes>
         </main>
       </div>
     </Router>
-  );
+  )
 }

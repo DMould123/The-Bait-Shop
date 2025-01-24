@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
-import logoImage from '../assets/logo.png';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'
+import logoImage from '../assets/logo.png'
 
 const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
@@ -23,16 +23,28 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link to="/calendar" className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium">
+            <Link
+              to="/calendar"
+              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+            >
               Calendar
             </Link>
-            <Link to="/restaurant" className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium">
+            <Link
+              to="/restaurant"
+              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+            >
               Restaurant
             </Link>
-            <Link to="/faqs" className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium">
+            <Link
+              to="/faqs"
+              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+            >
               FAQs
             </Link>
-            <Link to="/about" className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium">
+            <Link
+              to="/about"
+              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+            >
               About Us
             </Link>
           </div>
@@ -62,13 +74,28 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
               </button>
             </div>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-gray-600 transition-colors"
+              >
                 <FaInstagram className="h-6 w-6" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-gray-600 transition-colors"
+              >
                 <FaFacebook className="h-6 w-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600 transition-colors">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-gray-600 transition-colors"
+              >
                 <FaTwitter className="h-6 w-6" />
               </a>
             </div>
@@ -81,12 +108,32 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
               >
                 <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
-                  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg
+                    className="h-6 w-6"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 ) : (
-                  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="h-6 w-6"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 )}
               </button>
@@ -97,16 +144,28 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
         {/* Mobile Navigation */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2">
-            <Link to="/calendar" className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium">
+            <Link
+              to="/calendar"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+            >
               Calendar
             </Link>
-            <Link to="/restaurant" className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium">
+            <Link
+              to="/restaurant"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+            >
               Restaurant
             </Link>
-            <Link to="/faqs" className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium">
+            <Link
+              to="/faqs"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+            >
               FAQs
             </Link>
-            <Link to="/about" className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium">
+            <Link
+              to="/about"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+            >
               About Us
             </Link>
           </div>
@@ -116,14 +175,16 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
         <div className="bg-gray-100 p-4 rounded-lg mt-2 overflow-hidden">
           <div className="whitespace-nowrap overflow-hidden">
             <ul className="inline-flex animate-marquee">
-              {fullCalendar.map(event => (
+              {fullCalendar.map((event) => (
                 <li key={event.id} className="mx-4 text-gray-700">
-                  {event.artist} - {new Date(event.date).toLocaleDateString('en-US', {
+                  {event.artist} -{' '}
+                  {new Date(event.date).toLocaleDateString('en-US', {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
-                  })} at {event.time}
+                  })}{' '}
+                  at {event.time}
                 </li>
               ))}
             </ul>
@@ -131,7 +192,7 @@ const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

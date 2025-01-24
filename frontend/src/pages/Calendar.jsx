@@ -1,8 +1,8 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Calendar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   // Update the full calendar with all artists
   const fullCalendar = [
@@ -76,25 +76,33 @@ const Calendar = () => {
       time: '20:00',
       price: '$20'
     }
-  ];
+  ]
 
   const handleBookTickets = (concert) => {
-    navigate('/ticket-purchase', { state: { tickets: concert } });
-  };
+    navigate('/ticket-purchase', { state: { tickets: concert } })
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-8">Upcoming Shows at The Bait Shop</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-8">
+          Upcoming Shows at The Bait Shop
+        </h1>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {fullCalendar.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <div
+              key={event.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1"
+            >
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">{event.artist}</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  {event.artist}
+                </h3>
                 <div className="space-y-2 text-gray-600">
                   <p className="text-lg">
-                    <span className="font-semibold">Date:</span> {new Date(event.date).toLocaleDateString('en-US', {
+                    <span className="font-semibold">Date:</span>{' '}
+                    {new Date(event.date).toLocaleDateString('en-US', {
                       weekday: 'long',
                       year: 'numeric',
                       month: 'long',
@@ -108,7 +116,10 @@ const Calendar = () => {
                     <span className="font-semibold">Price:</span> {event.price}
                   </p>
                   <div className="pt-4">
-                    <button onClick={() => handleBookTickets(event)} className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors">
+                    <button
+                      onClick={() => handleBookTickets(event)}
+                      className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors"
+                    >
                       Book Tickets
                     </button>
                   </div>
@@ -125,7 +136,7 @@ const Calendar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

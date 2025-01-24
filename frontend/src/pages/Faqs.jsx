@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Faqs = () => {
   return (
@@ -14,7 +14,7 @@ const Faqs = () => {
         {/* More FAQ items will go here */}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Faqs;
+export default Faqs
