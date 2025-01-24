@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import logoImage from '../assets/logo.png';
 
-const Navbar = ({ language, setLanguage }) => {
+const Navbar = ({ language, setLanguage, events, fullCalendar }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -77,7 +77,7 @@ const Navbar = ({ language, setLanguage }) => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 hover:bg-gray-100"
+                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-yellow-300 hover:bg-blue-400"
               >
                 <span className="sr-only">Open main menu</span>
                 {!isOpen ? (
@@ -109,6 +109,24 @@ const Navbar = ({ language, setLanguage }) => {
             <Link to="/about" className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium">
               About Us
             </Link>
+          </div>
+        </div>
+
+        {/* Events Section for Upcoming Gigs */}
+        <div className="bg-gray-100 p-4 rounded-lg mt-2 overflow-hidden">
+          <div className="whitespace-nowrap overflow-hidden">
+            <ul className="inline-flex animate-marquee">
+              {fullCalendar.map(event => (
+                <li key={event.id} className="mx-4 text-gray-700">
+                  {event.artist} - {new Date(event.date).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })} at {event.time}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

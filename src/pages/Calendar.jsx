@@ -6,72 +6,72 @@ const Calendar = () => {
     {
       id: 1,
       artist: 'The Killers',
-      date: '2024-02-15',
+      date: '2004-11-04',
       time: '20:00',
-      price: '450 SEK'
+      price: '$25'
     },
     {
       id: 2,
       artist: 'Modest Mouse',
-      date: '2024-03-15',
+      date: '2005-01-06',
       time: '20:00',
-      price: '400 SEK'
+      price: '$28'
     },
     {
       id: 3,
       artist: 'Death Cab for Cutie',
-      date: '2024-03-22',
+      date: '2005-05-05',
       time: '19:30',
-      price: '400 SEK'
+      price: '$30'
     },
     {
       id: 4,
       artist: 'The Walkmen',
-      date: '2024-04-01',
+      date: '2005-01-27',
       time: '20:00',
-      price: '350 SEK'
+      price: '$25'
     },
     {
       id: 5,
       artist: 'Rooney',
-      date: '2024-04-05',
+      date: '2004-02-11',
       time: '20:00',
-      price: '350 SEK'
+      price: '$20'
     },
     {
       id: 6,
       artist: 'Rachael Yamagata',
-      date: '2024-04-15',
+      date: '2004-12-16',
       time: '19:30',
-      price: '300 SEK'
+      price: '$30'
     },
     {
       id: 7,
       artist: 'Cobra Verde',
       date: '2024-04-22',
       time: '20:00',
-      price: '300 SEK'
+      price: '$15'
     },
     {
       id: 8,
       artist: 'The Thrills',
       date: '2024-05-01',
       time: '20:00',
-      price: '350 SEK'
+      price: '$20'
     },
     {
       id: 9,
       artist: 'Tom Vek',
       date: '2024-05-10',
       time: '20:00',
-      price: '300 SEK'
+      price: '$18'
     },
     {
       id: 10,
       artist: 'The Subways',
-      date: '2024-05-20',
+      date: '2005-11-17',
       time: '20:00',
-      price: '350 SEK'
+      price: '$20'
     }
   ];
 

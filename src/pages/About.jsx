@@ -1,7 +1,6 @@
-import React from 'react';
-import baitShopImage from '../assets/baitshop.jpg'; // Main image
-import baitShopImage1 from '../assets/baitshop-bar.jpg'; // First additional image
-import baitShopImage2 from '../assets/baitshop-indoors.jpg'; // Second additional image
+import baitShopImage from '../assets/baitshop.jpg';
+import baitShopImage1 from '../assets/baitshop-bar.jpg';
+import baitShopImage2 from '../assets/baitshop-indoors.jpg';
 
 const About = () => {
   return (
@@ -9,7 +8,7 @@ const About = () => {
       <h1 className="text-3xl font-bold mb-6 text-gray-800">About The Bait Shop</h1>
       <div className="prose max-w-none text-gray-700 mb-8">
         <p>
-          The Bait Shop is a vibrant new addition to California's music scene, having recently opened its doors to become a premier venue for concerts and events. Our mission is to provide a platform for both local talent and international artists, fostering a community driven by a passion for music and culture.
+          The Bait Shop is a vibrant new addition to Orange County, California's music scene, having recently opened its doors to become a premier venue for concerts and events. Our mission is to provide a platform for both local talent and international artists, fostering a community driven by a passion for music and culture.
         </p>
         <p>
           With an exciting lineup of upcoming acts, The Bait Shop is the place to be for music lovers. We are proud to host a diverse range of performances, from emerging artists to established names, ensuring that every night is a unique experience. Join us as we celebrate the power of live music and the artists who bring it to life.

@@ -6,22 +6,6 @@ import deathcabImage from '../assets/deathcab.png';
 import thrillsImage from '../assets/Thrills.png';
 import rooneyImage from '../assets/rooney.png';
 
-
-const upcomingConcerts = [
-  {
-    id: 1,
-    artist: 'The Killers',
-    date: '2024-02-15',
-    time: '20:00',
-    venue: 'The Bait Shop',
-    price: '450 SEK',
-    description: 'Live in Concert - Hot Fuss Anniversary Tour',
-    supportAct: 'Special Guests: The Walkmen',
-    doorsOpen: '19:00',
-    image: heroImage
-  }
-];
-
 const otherConcerts = [
   {
     id: 1,
@@ -29,7 +13,7 @@ const otherConcerts = [
     date: '2024-03-15',
     time: '20:00',
     image: modestImage,
-    price: '400 SEK'
+    price: '$28'
   },
   {
     id: 2,
@@ -37,7 +21,7 @@ const otherConcerts = [
     date: '2024-03-22',
     time: '19:30',
     image: deathcabImage,
-    price: '400 SEK'
+    price: '$30'
   },
   {
     id: 3,
@@ -45,7 +29,7 @@ const otherConcerts = [
     date: '2024-04-05',
     time: '20:00',
     image: rooneyImage,
-    price: '350 SEK'
+    price: '$20'
   },
   {
     id: 4,
@@ -53,7 +37,7 @@ const otherConcerts = [
     date: '2024-04-12',
     time: '21:00',
     image: thrillsImage,
-    price: '350 SEK'
+    price: '$20'
   }
 ];
 
@@ -78,8 +62,8 @@ const Home = () => {
           <p className="text-lg text-gray-700 mb-2">The Bait Shop</p>
           <p className="text-lg text-gray-700 mb-2">Doors: 19:00</p>
           <p className="text-lg text-gray-700 mb-2">Show: 20:00</p>
-          <p className="text-lg text-gray-700 mb-2">Support: The Walkmen</p>
-          <p className="text-lg font-bold text-red-600 mb-4">Price: 450 SEK</p>
+          <p className="text-lg text-gray-700 mb-2">Support: The Bravery</p>
+          <p className="text-lg font-bold text-red-600 mb-4">$25</p>
           <button className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto">
             <span className="mr-2">🎟️</span> Book Tickets
           </button>
