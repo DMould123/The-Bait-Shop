@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
+import { useState } from 'react'
 
 const stripePromise = loadStripe(
   'pk_test_51NpuV8JiXV88granpu14IbP89g0Tn2YLNmAjvNZffbDkbpUFpDNEiBDt9o9ACUS2rozL6UvLLLQV55miUOUIURPx00D7luQrbY'
@@ -8,6 +9,7 @@ const stripePromise = loadStripe(
 const TicketPurchase = () => {
   const location = useLocation()
   const { tickets } = location.state || {}
+  const [quantity, setQuantity] = useState(1)
   const navigate = useNavigate()
 
   console.log(tickets)
@@ -28,7 +30,7 @@ const TicketPurchase = () => {
             {
               name: tickets.artist,
               price: parseFloat(tickets.price.replace('$', '')),
-              quantity: 1
+              quantity: quantity
             }
           ]
         })
@@ -43,13 +45,18 @@ const TicketPurchase = () => {
     }
   }
 
+  const handleQuantityChange = (e) => {
+    const value = Math.min(Math.max(1, e.target.value), 20)
+    setQuantity(value)
+  }
+
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold">Purchase Tickets for {tickets.artist}</h1>
+      <h1 className="text-2xl font-bold">{tickets.artist}</h1>
       <p>Date: {tickets.date}</p>
       <p>Time: {tickets.time}</p>
       <p>Price: {tickets.price}</p>
-      <p className="mt-4"><strong>Description:</strong> {tickets.blurb}</p>
+      <p className="mt-4"> {tickets.blurb}</p>
 
       {tickets.yt && (
         <div className="mt-4">
@@ -65,6 +72,21 @@ const TicketPurchase = () => {
           ></iframe>
         </div>
       )}
+
+      <div className="mt-4">
+        <label htmlFor="quantity" className="block text-lg font-semibold">Quantity:</label>
+        <div className="flex items-center mt-2">
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            max="20"
+            value={quantity}
+            onChange={handleQuantityChange}
+            className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+          />
+        </div>
+      </div>
 
       <div className="mt-4">
         <button

@@ -55,7 +55,7 @@ export default function App() {
       time: "20:00",
       price: "$20",
       blurb: "California’s own Rooney are bringing their sun-soaked melodies and retro vibes to The Bait Shop! Their self-titled debut album features hits like \"Blueside\" and \"I’m Shakin’.\" With praise from Spin and appearances on Carson Daly and David Letterman, Rooney is quickly becoming a name to watch in the indie scene.",
-      yt: "hhttps://www.youtube.com/watch?v=3Rt8_iLLYOs"
+      yt: "https://www.youtube.com/watch?v=3Rt8_iLLYOs"
     },
     {
       id: 6,
