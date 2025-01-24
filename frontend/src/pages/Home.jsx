@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import heroImage from '../assets/the_killers.jpg';
 import modestImage from '../assets/modest.png';
 import deathcabImage from '../assets/deathcab.png';
@@ -41,8 +41,13 @@ const otherConcerts = [
   }
 ];
 
-const Home = () => {
+const Home = ({ fullCalendar }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const navigate = useNavigate();
+
+  const handleBookTickets = (concert) => {
+    navigate('/ticket-purchase', { state: { tickets: concert } });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -64,7 +69,10 @@ const Home = () => {
           <p className="text-lg text-gray-700 mb-2">Show: 20:00</p>
           <p className="text-lg text-gray-700 mb-2">Support: The Bravery</p>
           <p className="text-lg font-bold text-red-600 mb-4">$25</p>
-          <button className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto">
+          <button
+            className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto"
+            onClick={() => handleBookTickets(fullCalendar[0])}
+          >
             <span className="mr-2">🎟️</span> Book Tickets
           </button>
 
@@ -117,7 +125,10 @@ const Home = () => {
                     <span className="text-lg font-semibold">{concert.price}</span>
                     <span className="text-sm text-gray-500">Limited Tickets</span>
                   </div>
-                  <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition-colors text-sm font-medium">
+                  <button
+                    className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition-colors text-sm font-medium"
+                    onClick={() => handleBookTickets(concert)}
+                  >
                     Book Now
                   </button>
                 </div>

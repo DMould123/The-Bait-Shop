@@ -90,16 +90,16 @@ export default function App() {
       <div className="min-h-screen bg-gray-100">
         <Navbar language={language} setLanguage={setLanguage} events={fullCalendar} fullCalendar={fullCalendar} />
         <main className="container mx-auto px-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/restaurant" element={<Restaurant />} />
-            <Route path="/faqs" element={<Faqs />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/success" element={<Success />} />
-            <Route path="/cancel" element={<Cancel />} />
-            <Route path="/ticket-purchase" element={<TicketPurchase />} />
-          </Routes>
+        <Routes>
+  <Route path="/" element={<Home fullCalendar={fullCalendar} />} />
+  <Route path="/calendar" element={<Calendar />} />
+  <Route path="/restaurant" element={<Restaurant />} />
+  <Route path="/faqs" element={<Faqs />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/success" element={<Success />} />
+  <Route path="/cancel" element={<Cancel />} />
+  <Route path="/ticket-purchase" element={<TicketPurchase />} />
+</Routes>
         </main>
       </div>
     </Router>
