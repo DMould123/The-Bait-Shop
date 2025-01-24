@@ -17,22 +17,9 @@
 .env.test.local
 .env.production.local
 
-# Node modules
-backend/node_modules/
-frontend/node_modules/
-
-# Environment variables
-backend/.env
-frontend/.env
-
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Build output
-frontend/dist/
-frontend/build/
 
 # Editor directories and files
 .vscode/*
