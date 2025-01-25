@@ -1,7 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaSpotify } from 'react-icons/fa'
-import logoImage from '../assets/logo.png'
+import {
+  FaInstagramSquare,
+  FaFacebook,
+  FaTwitter,
+  FaTiktok,
+  FaSpotify
+} from 'react-icons/fa'
 
 const Navbar = ({ fullCalendar }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +19,7 @@ const Navbar = ({ fullCalendar }) => {
           <div className="flex-shrink-0">
             <Link to="/">
               <img
-                src={logoImage}
+                src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737800969/The_Bait_Shop/logo_l8chx5.png"
                 alt="The Bait Shop Logo"
                 className="h-16 w-auto sm:h-20 md:h-24 hover:opacity-90 transition-opacity"
               />
@@ -57,7 +62,7 @@ const Navbar = ({ fullCalendar }) => {
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
             >
-              <FaInstagram className="h-6 w-6" />
+              <FaInstagramSquare className="h-6 w-6" />
             </a>
             <a
               href="https://facebook.com"

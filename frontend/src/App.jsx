@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Calendar from './pages/Calendar'
@@ -15,6 +14,7 @@ export default function App() {
     {
       id: 1,
       artist: "The Killers",
+      img:"https://res.cloudinary.com/dele4dvi9/image/upload/v1737800970/The_Bait_Shop/the_killers_razett.png",
       date: "2004-11-04",
       time: "20:00",
       price: "$25",
@@ -24,6 +24,7 @@ export default function App() {
     {
       id: 2,
       artist: "Modest Mouse",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800794/The_Bait_Shop/modest_jeo6pg.png",
       date: "2005-01-06",
       time: "20:00",
       price: "$28",
@@ -33,6 +34,7 @@ export default function App() {
     {
       id: 3,
       artist: "Death Cab for Cutie",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737799918/The_Bait_Shop/deathcab_f1kh5d.png",
       date: "2005-05-05",
       time: "19:30",
       price: "$30",
@@ -42,6 +44,7 @@ export default function App() {
     {
       id: 4,
       artist: "The Walkmen",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800964/The_Bait_Shop/Walkmen_wtqc6m.png",
       date: "2005-01-27",
       time: "20:00",
       price: "$25",
@@ -51,6 +54,7 @@ export default function App() {
     {
       id: 5,
       artist: "Rooney",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800965/The_Bait_Shop/rooney_e2m0fm.png",
       date: "2004-02-11",
       time: "20:00",
       price: "$20",
@@ -60,6 +64,7 @@ export default function App() {
     {
       id: 6,
       artist: "Rachael Yamagata",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800951/The_Bait_Shop/Rachael_Yamagata2005_enhanced_y09jmu.png",
       date: "2004-12-16",
       time: "19:30",
       price: "$30",
@@ -69,6 +74,7 @@ export default function App() {
     {
       id: 7,
       artist: "Cobra Verde",
+      img:"https://res.cloudinary.com/dele4dvi9/image/upload/v1737802833/The_Bait_Shop/Cobra_verde_enhanced_g79zrm.png",
       date: "2003-12-17",
       time: "20:00",
       price: "$15",
@@ -78,6 +84,7 @@ export default function App() {
     {
       id: 8,
       artist: "The Thrills",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800964/The_Bait_Shop/Thrills_xevn5y.png",
       date: "2004-11-11",
       time: "20:00",
       price: "$20",
@@ -87,6 +94,7 @@ export default function App() {
     {
       id: 9,
       artist: "Tom Vek",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737803158/The_Bait_Shop/Tomvekoc_enhanced_ymbuuy.png",
       date: "2005-04-07",
       time: "20:00",
       price: "$18",
@@ -96,6 +104,7 @@ export default function App() {
     {
       id: 10,
       artist: "The Subways",
+      img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737803159/The_Bait_Shop/Subwaysoc_enhanced_zg7c0w.png",
       date: "2005-11-17",
       time: "20:00",
       price: "$20",

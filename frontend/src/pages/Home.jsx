@@ -55,7 +55,7 @@ const Home = ({ fullCalendar }) => {
       <div className="flex flex-col md:flex-row max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="w-full md:w-2/3">
           <img
-            src={heroImage}
+            src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737800970/The_Bait_Shop/the_killers_razett.png"
             alt="The Killers"
             className="w-full h-full object-cover"
           />
