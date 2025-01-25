@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Restaurant = () => {
+export default function Restaurant() {
   return (
     <div className="py-8">
       <h1 className="text-3xl font-bold mb-6">Our Restaurant</h1>
@@ -14,5 +12,3 @@ const Restaurant = () => {
     </div>
   )
 }
-
-export default Restaurant

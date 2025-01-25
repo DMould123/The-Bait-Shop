@@ -1,11 +1,10 @@
 import { FaWater } from 'react-icons/fa';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-6 mt-16">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <p className="mb-4">One of Newport County's most iconic places for music, concerts, and club experiences!</p>
-
         <div className="mb-4">
           <h3 className="font-semibold">
             The Bait Shop <FaWater className="inline text-blue-500 text-1xl" />
@@ -21,6 +20,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,4 +1,4 @@
-const About = () => {
+export default function About () {
   return (
     <div className="py-8 bg-gray-50">
       <h1 className="text-3xl font-bold mb-6 text-gray-800">
@@ -50,5 +50,3 @@ const About = () => {
     </div>
   )
 }
-
-export default About

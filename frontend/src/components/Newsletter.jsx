@@ -1,20 +1,19 @@
-import React from 'react';
 import { FaEnvelope, FaWater } from 'react-icons/fa';
 
-const Newsletter = () => {
+export default function Newsletter() {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mt-16">
       <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
         The Bait Shop <FaWater className="inline text-blue-500 text-3xl" />
       </h2>
       <h3 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          Where music meets the ocean
-        </h3>
+        Where music meets the ocean
+      </h3>
       <p className="text-lg font-semibold text-gray-600 mb-4 text-center">
-      Stay updated on upcoming shows, events, and exclusive offers!
+        Stay updated on upcoming shows, events, and exclusive offers!
       </p>
       <p className="text-gray-600 mb-4 text-center">
-        Register your email to never miss out on the hottest bands coming to play for you in Newport County
+        Register your email to never miss out on the hottest bands coming to play for you in Newport County.
       </p>
       <form
         action="https://formspree.io/f/mjvdqpav"
@@ -40,6 +39,4 @@ const Newsletter = () => {
       </form>
     </div>
   );
-};
-
-export default Newsletter;
+}

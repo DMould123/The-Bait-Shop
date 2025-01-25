@@ -8,7 +8,7 @@ import {
   FaSpotify
 } from 'react-icons/fa'
 
-const Navbar = ({ fullCalendar }) => {
+export default function Navbar ({ fullCalendar }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -191,5 +191,3 @@ const Navbar = ({ fullCalendar }) => {
     </nav>
   )
 }
-
-export default Navbar

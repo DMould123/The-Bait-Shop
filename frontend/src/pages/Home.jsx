@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Home = ({ fullCalendar }) => {
+export default function Home ({ fullCalendar }) {
   const [showDescription, setShowDescription] = useState(false)
   const navigate = useNavigate()
 
@@ -112,5 +112,3 @@ const Home = ({ fullCalendar }) => {
     </div>
   )
 }
-
-export default Home

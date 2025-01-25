@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Faqs = () => {
+export default function Faqs() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
@@ -63,5 +61,3 @@ const Faqs = () => {
     </div>
   )
 }
-
-export default Faqs

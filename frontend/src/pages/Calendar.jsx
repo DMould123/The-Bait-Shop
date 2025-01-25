@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
-const Calendar = ({ fullCalendar }) => {
+export default function Calendar ({ fullCalendar })  {
   const navigate = useNavigate()
-
   const handleBookTickets = (concert) => {
     navigate('/ticket-purchase', { state: { tickets: concert } })
   }
@@ -57,5 +56,3 @@ const Calendar = ({ fullCalendar }) => {
     </div>
   )
 }
-
-export default Calendar
