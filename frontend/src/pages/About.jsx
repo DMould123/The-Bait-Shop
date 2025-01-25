@@ -47,35 +47,6 @@ const About = () => {
           />
         </div>
       </div>
-
-      {/* Newsletter Signup Section */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Sign Up for Our Newsletter
-        </h2>
-        <p className="text-gray-600 mb-4">
-          Stay updated on upcoming shows, events, and exclusive offers!
-        </p>
-        <form
-          action="https://formspree.io/f/mjvdqpav"
-          method="POST"
-          className="flex flex-col"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email address"
-            required
-            className="border border-gray-300 p-2 rounded-lg mb-4"
-          />
-          <button
-            type="submit"
-            className="bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition-colors"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
     </div>
   )
 }

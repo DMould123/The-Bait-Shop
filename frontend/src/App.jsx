@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import Success from './pages/Success'
 import Cancel from './pages/Cancel'
 import TicketPurchase from './pages/TicketPurchase'
+import Newsletter from './components/Newsletter'
+import Footer from './components/Footer'
 
 export default function App() {
   const fullCalendar = [
@@ -18,7 +20,7 @@ export default function App() {
       date: "2004-11-04",
       time: "20:00",
       price: "$25",
-      blurb: "Las Vegas’ rising stars, The Killers, are on the verge of taking the world by storm! Their debut album, Hot Fuss, featuring iconic singles like \"Mr. Brightside\" and \"Somebody Told Me,\" has captivated fans and critics alike. Praised by NME as \"irresistibly stylish,\" they’ve been making waves on shows like Late Night with Conan O’Brien and The Tonight Show with Jay Leno. Don’t miss their electric energy live at The Bait Shop!",
+      blurb: "Las Vegas' rising stars, The Killers, are on the verge of taking the world by storm! Their debut album, Hot Fuss, featuring iconic singles like \"Mr. Brightside\" and \"Somebody Told Me,\" has captivated fans and critics alike. Praised by NME as \"irresistibly stylish,\" they've been making waves on shows like Late Night with Conan O'Brien and The Tonight Show with Jay Leno. Don't miss their electric energy live at The Bait Shop!",
       yt: "https://www.youtube.com/watch?v=K9FMpOduOWI"
     },
     {
@@ -28,7 +30,7 @@ export default function App() {
       date: "2005-01-06",
       time: "20:00",
       price: "$28",
-      blurb: "Catch the groundbreaking indie legends Modest Mouse as they bring their unique sound to The Bait Shop! Their latest album, Good News for People Who Love Bad News, has earned them Grammy nominations and massive acclaim, with Spin calling it \"a game-changer for indie rock.\" Their breakout single \"Float On\" has been dominating the charts, and recent performances on The Late Show with David Letterman and Jimmy Kimmel Live! prove this is a band you don’t want to miss.",
+      blurb: "Catch the groundbreaking indie legends Modest Mouse as they bring their unique sound to The Bait Shop! Their latest album, Good News for People Who Love Bad News, has earned them Grammy nominations and massive acclaim, with Spin calling it \"a game-changer for indie rock.\" Their breakout single \"Float On\" has been dominating the charts, and recent performances on The Late Show with David Letterman and Jimmy Kimmel Live! prove this is a band you don't want to miss.",
       yt: "https://www.youtube.com/watch?v=xAxtQmkZm7E"
     },
     {
@@ -38,7 +40,7 @@ export default function App() {
       date: "2005-05-05",
       time: "19:30",
       price: "$30",
-      blurb: "Washington’s indie rock favorites, Death Cab for Cutie, bring their emotive sound to The Bait Shop! Their critically acclaimed album Transatlanticism has garnered praise from Rolling Stone and Pitchfork, with standout tracks like \"The Sound of Settling\" and \"Title and Registration\". The band recently performed on The Late Late Show with Craig Kilborn, cementing their status as a must-see act.",
+      blurb: "Washington's indie rock favorites, Death Cab for Cutie, bring their emotive sound to The Bait Shop! Their critically acclaimed album Transatlanticism has garnered praise from Rolling Stone and Pitchfork, with standout tracks like \"The Sound of Settling\" and \"Title and Registration\". The band recently performed on The Late Late Show with Craig Kilborn, cementing their status as a must-see act.",
       yt: "https://www.youtube.com/watch?v=R56hsle0s4A"
     },
     {
@@ -48,7 +50,7 @@ export default function App() {
       date: "2005-01-27",
       time: "20:00",
       price: "$25",
-      blurb: "Don’t miss The Walkmen, the New York-based indie rockers known for their melancholic yet powerful sound. Their album Bows + Arrows, featuring the hit single \"The Rat,\" has been lauded by critics as one of the best records of the year. Appearances on Late Night with Conan O’Brien and their feature in NME highlight their rising stardom.",
+      blurb: "Don't miss The Walkmen, the New York-based indie rockers known for their melancholic yet powerful sound. Their album Bows + Arrows, featuring the hit single \"The Rat,\" has been lauded by critics as one of the best records of the year. Appearances on Late Night with Conan O'Brien and their feature in NME highlight their rising stardom.",
       yt: "https://www.youtube.com/watch?v=Fg8U3YG9wCA"
     },
     {
@@ -58,7 +60,7 @@ export default function App() {
       date: "2004-02-11",
       time: "20:00",
       price: "$20",
-      blurb: "California’s own Rooney are bringing their sun-soaked melodies and retro vibes to The Bait Shop! Their self-titled debut album features hits like \"Blueside\" and \"I’m Shakin’.\" With praise from Spin and appearances on Carson Daly and David Letterman, Rooney is quickly becoming a name to watch in the indie scene.",
+      blurb: "California's own Rooney are bringing their sun-soaked melodies and retro vibes to The Bait Shop! Their self-titled debut album features hits like \"Blueside\" and \"I'm Shakin'.\" With praise from Spin and appearances on Carson Daly and David Letterman, Rooney is quickly becoming a name to watch in the indie scene.",
       yt: "https://www.youtube.com/watch?v=3Rt8_iLLYOs"
     },
     {
@@ -78,7 +80,7 @@ export default function App() {
       date: "2003-12-17",
       time: "20:00",
       price: "$15",
-      blurb: "Cleveland rockers Cobra Verde bring their gritty, guitar-driven sound to The Bait Shop! Known for their energetic live performances, the band’s latest album Easy Listening has been turning heads, with tracks like \"Riot Industry\" gaining airplay. The band has earned praise from SPIN magazine for their explosive mix of garage rock and punk influences.",
+      blurb: "Cleveland rockers Cobra Verde bring their gritty, guitar-driven sound to The Bait Shop! Known for their energetic live performances, the band's latest album Easy Listening has been turning heads, with tracks like \"Riot Industry\" gaining airplay. The band has earned praise from SPIN magazine for their explosive mix of garage rock and punk influences.",
       yt: "https://www.youtube.com/watch?v=CVM5Z5ccDT4"
     },
     {
@@ -88,7 +90,7 @@ export default function App() {
       date: "2004-11-11",
       time: "20:00",
       price: "$20",
-      blurb: "Irish indie rockers The Thrills bring their summery vibes to The Bait Shop! Their sophomore album Let’s Bottle Bohemia, featuring tracks like \"Whatever Happened to Corey Haim?\" and \"The Irish Keep Gate-Crashing,\" has solidified their place as one of the top indie acts of the moment. With glowing reviews in Q Magazine and a performance on The Late Show with David Letterman, this is a show not to miss.",
+      blurb: "Irish indie rockers The Thrills bring their summery vibes to The Bait Shop! Their sophomore album Let's Bottle Bohemia, featuring tracks like \"Whatever Happened to Corey Haim?\" and \"The Irish Keep Gate-Crashing,\" has solidified their place as one of the top indie acts of the moment. With glowing reviews in Q Magazine and a performance on The Late Show with David Letterman, this is a show not to miss.",
       yt: "https://www.youtube.com/watch?v=mtk8Aoj80fE"
     },
     {
@@ -98,7 +100,7 @@ export default function App() {
       date: "2005-04-07",
       time: "20:00",
       price: "$18",
-      blurb: "Catch London’s genre-bending sensation Tom Vek at The Bait Shop! His debut album We Have Sound features innovative tracks like \"C-C (You Set the Fire in Me)\" and \"If You Want.\" Hailed by NME as \"the future of indie music,\" Tom’s dynamic live performances have also made waves on BBC’s Later… with Jools Holland.",
+      blurb: "Catch London's genre-bending sensation Tom Vek at The Bait Shop! His debut album We Have Sound features innovative tracks like \"C-C (You Set the Fire in Me)\" and \"If You Want.\" Hailed by NME as \"the future of indie music,\" Tom's dynamic live performances have also made waves on BBC's Later... with Jools Holland.",
       yt: "https://www.youtube.com/watch?v=SwDLu9D-YVU"
     },
     {
@@ -133,6 +135,8 @@ export default function App() {
             <Route path="/ticket-purchase" element={<TicketPurchase />} />
           </Routes>
         </main>
+        <Newsletter />
+        <Footer />
       </div>
     </Router>
   )
