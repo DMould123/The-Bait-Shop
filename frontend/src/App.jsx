@@ -39,7 +39,7 @@ export default function App() {
       img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737799918/The_Bait_Shop/deathcab_f1kh5d.png",
       date: "2005-05-05",
       time: "19:30",
-      price: "$30",
+      price: "$40",
       blurb: "Washington's indie rock favorites, Death Cab for Cutie, bring their emotive sound to The Bait Shop! Their critically acclaimed album Transatlanticism has garnered praise from Rolling Stone and Pitchfork, with standout tracks like \"The Sound of Settling\" and \"Title and Registration\". The band recently performed on The Late Late Show with Craig Kilborn, cementing their status as a must-see act.",
       yt: "https://www.youtube.com/watch?v=R56hsle0s4A"
     },
@@ -89,7 +89,7 @@ export default function App() {
       img: "https://res.cloudinary.com/dele4dvi9/image/upload/v1737800964/The_Bait_Shop/Thrills_xevn5y.png",
       date: "2004-11-11",
       time: "20:00",
-      price: "$20",
+      price: "$25",
       blurb: "Irish indie rockers The Thrills bring their summery vibes to The Bait Shop! Their sophomore album Let's Bottle Bohemia, featuring tracks like \"Whatever Happened to Corey Haim?\" and \"The Irish Keep Gate-Crashing,\" has solidified their place as one of the top indie acts of the moment. With glowing reviews in Q Magazine and a performance on The Late Show with David Letterman, this is a show not to miss.",
       yt: "https://www.youtube.com/watch?v=mtk8Aoj80fE"
     },

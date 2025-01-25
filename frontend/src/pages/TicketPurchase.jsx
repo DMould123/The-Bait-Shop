@@ -15,7 +15,11 @@ export default function TicketPurchase() {
   console.log(tickets)
 
   const handleCheckout = async () => {
-    console.log('Checkout button clicked')
+    if (tickets.artist === "Death Cab for Cutie") {
+      alert("Tickets for this concert are sold out.")
+      return
+    }
+
     const stripe = await stripePromise
 
     const response = await fetch(
@@ -73,27 +77,38 @@ export default function TicketPurchase() {
         </div>
       )}
 
+      {tickets.artist === "Death Cab for Cutie" && (
+        <div className="mt-4 text-red-600 font-bold">
+          This concert is sold out.
+        </div>
+      )}
+
       <div className="mt-4">
         <label htmlFor="quantity" className="block text-lg font-semibold">Quantity:</label>
         <div className="flex items-center mt-2">
-          <input
-            type="number"
-            id="quantity"
-            min="1"
-            max="20"
-            value={quantity}
-            onChange={handleQuantityChange}
-            className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-          />
+          {tickets.artist === "Death Cab for Cutie" ? (
+            <span className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center">-</span>
+          ) : (
+            <input
+              type="number"
+              id="quantity"
+              min="1"
+              max="20"
+              value={quantity}
+              onChange={handleQuantityChange}
+              className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+            />
+          )}
         </div>
       </div>
 
       <div className="mt-4">
         <button
-          className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg"
+          className={`bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg ${tickets.artist === "Death Cab for Cutie" ? 'opacity-50 cursor-not-allowed' : ''}`}
           onClick={handleCheckout}
+          disabled={tickets.artist === "Death Cab for Cutie"}
         >
-          Proceed to Checkout
+          {tickets.artist === "Death Cab for Cutie" ? 'Sold Out' : 'Proceed to Checkout'}
         </button>
       </div>
     </div>

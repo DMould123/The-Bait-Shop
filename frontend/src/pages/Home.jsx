@@ -6,6 +6,10 @@ export default function Home ({ fullCalendar }) {
   const navigate = useNavigate()
 
   const handleBookTickets = (concert) => {
+    if (concert.artist === "Death Cab for Cutie") {
+      alert("Tickets for this concert are sold out.");
+      return;
+    }
     navigate('/ticket-purchase', { state: { tickets: concert } })
   }
 
@@ -80,28 +84,23 @@ export default function Home ({ fullCalendar }) {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <h3 className="text-xl font-bold">{concert.artist}</h3>
-                    <p className="text-sm opacity-90">
-                      {new Date(concert.date).toLocaleDateString()} at{' '}
-                      {concert.time}
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white absolute bottom-0 left-0 p-2">
+                    {concert.artist}
+                    {concert.artist === "Death Cab for Cutie" && (
+                      <span className="text-red-500 font-bold ml-2">Sold Out</span>
+                    )}
+                  </h3>
                 </div>
-                <div className="p-4 bg-white">
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-lg font-semibold">
-                      {concert.price}
-                    </span>
-                    <span className="text-sm text-gray-500">
-                      Limited Tickets
-                    </span>
-                  </div>
+                <div className="p-4">
+                  <p className="text-gray-600">{new Date(concert.date).toLocaleDateString()}</p>
+                  <p className="text-gray-600">{concert.time}</p>
+                  <p className="text-lg font-bold text-gray-800 mt-2">{concert.price}</p>
                   <button
-                    className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 rounded-lg transition-colors text-sm font-medium"
+                    className={`mt-4 bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors ${concert.artist === "Death Cab for Cutie" ? 'opacity-50 cursor-not-allowed' : ''}`}
                     onClick={() => handleBookTickets(concert)}
+                    disabled={concert.artist === "Death Cab for Cutie"}
                   >
-                    Book Now
+                    {concert.artist === "Death Cab for Cutie" ? 'Sold Out' : 'Book Now'}
                   </button>
                 </div>
               </div>
