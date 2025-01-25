@@ -57,8 +57,8 @@ const Calendar = ({ fullCalendar }) => {
 
         {/* OC Reference Section */}
         <div className="mt-16 text-center text-gray-800">
-          <p className="text-lg italic">"Where music meets the ocean"</p>
-          <p className="text-sm mt-2">As featured in The OC - Season 1</p>
+        <p className="text-lg italic">The Bait Shop</p>
+          <p className="text-lg italic">Where music meets the ocean</p>
         </div>
       </div>
     </div>

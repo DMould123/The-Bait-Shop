@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
   const { items } = req.body;
-  console.log(items); // Log the items received
 
   const line_items = items.map(item => ({
     price_data: {
@@ -33,7 +32,7 @@ app.post('/create-checkout-session', async (req, res) => {
       cancel_url: 'http://localhost:5173/cancel',
     });
 
-    console.log('Session created:', session); // Log the session details
+    console.log('Session created:', session);
     res.json({ id: session.id });
   } catch (error) {
     console.error(error);

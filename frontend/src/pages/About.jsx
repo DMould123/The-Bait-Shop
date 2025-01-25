@@ -1,7 +1,3 @@
-import baitShopImage from '../assets/baitshop.jpg'
-import baitShopImage1 from '../assets/baitshop-bar.jpg'
-import baitShopImage2 from '../assets/baitshop-indoors.jpg'
-
 const About = () => {
   return (
     <div className="py-8 bg-gray-50">
@@ -34,18 +30,18 @@ const About = () => {
       {/* Images Section */}
       <div className="flex flex-col items-center mb-8">
         <img
-          src={baitShopImage}
+          src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799918/The_Bait_Shop/baitshop_w7lejg.png"
           alt="The Bait Shop"
           className="w-full h-auto rounded-lg shadow-md mb-4"
         />
         <div className="flex space-x-4">
           <img
-            src={baitShopImage1}
+            src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799927/The_Bait_Shop/baitshop-bar_an53dl.png"
             alt="Bait Shop Interior"
             className="w-1/2 h-auto rounded-lg shadow-md"
           />
           <img
-            src={baitShopImage2}
+            src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799926/The_Bait_Shop/baitshop-indoors_gdsxmv.png"
             alt="Bait Shop Event"
             className="w-1/2 h-auto rounded-lg shadow-md"
           />

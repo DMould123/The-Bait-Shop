@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaInstagramSquare, FaFacebook, FaTwitter, FaTiktok, FaSpotify } from 'react-icons/fa'
+import { FaInstagram, FaFacebook, FaTwitter, FaTiktok, FaSpotify } from 'react-icons/fa'
 import logoImage from '../assets/logo.png'
 
 const Navbar = ({ fullCalendar }) => {
@@ -57,7 +57,7 @@ const Navbar = ({ fullCalendar }) => {
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
             >
-              <FaInstagramSquare className="h-6 w-6" />
+              <FaInstagram className="h-6 w-6" />
             </a>
             <a
               href="https://facebook.com"
