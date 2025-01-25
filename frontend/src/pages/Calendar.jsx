@@ -1,7 +1,12 @@
 import { useNavigate } from 'react-router-dom'
+import { formatDate } from '../utils/dateUtils'
 
 export default function Calendar ({ fullCalendar })  {
   const navigate = useNavigate()
+
+  // Sort events by date
+  const sortedEvents = fullCalendar.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+
   const handleBookTickets = (concert) => {
     navigate('/ticket-purchase', { state: { tickets: concert } })
   }
@@ -14,7 +19,7 @@ export default function Calendar ({ fullCalendar })  {
         </h1>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {fullCalendar.map((event) => (
+          {sortedEvents.map((event) => (
             <div
               key={event.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1"
@@ -26,12 +31,7 @@ export default function Calendar ({ fullCalendar })  {
                 <div className="space-y-2 text-gray-600">
                   <p className="text-lg">
                     <span className="font-semibold">Date:</span>{' '}
-                    {new Date(event.date).toLocaleDateString('en-US', {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
+                    {formatDate(event.date)}
                   </p>
                   <p className="text-lg">
                     <span className="font-semibold">Time:</span> {event.time}
@@ -42,9 +42,9 @@ export default function Calendar ({ fullCalendar })  {
                   <div className="pt-4">
                     <button
                       onClick={() => handleBookTickets(event)}
-                      className="w-full bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors"
+                      className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-2 rounded-lg transition-colors"
                     >
-                      Book Tickets
+                      <span className="mr-2">🎟️</span> Book Tickets
                     </button>
                   </div>
                 </div>

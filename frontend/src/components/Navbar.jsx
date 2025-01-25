@@ -7,6 +7,7 @@ import {
   FaTiktok,
   FaSpotify
 } from 'react-icons/fa'
+import { formatDate } from '../utils/dateUtils'
 
 export default function Navbar ({ fullCalendar }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -169,21 +170,21 @@ export default function Navbar ({ fullCalendar }) {
         </div>
 
         {/* Events Section for Upcoming Gigs */}
-        <div className="bg-gray-100 p-4 rounded-lg mt-2 overflow-hidden">
+        <div className="bg-100 p-4 rounded-lg mt-2 overflow-hidden">
           <div className="whitespace-nowrap overflow-hidden">
             <ul className="inline-flex animate-marquee">
-              {fullCalendar.map((event) => (
-                <li key={event.id} className="mx-4 text-gray-700">
-                  {event.artist} -{' '}
-                  {new Date(event.date).toLocaleDateString('en-US', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}{' '}
-                  at {event.time}
-                </li>
-              ))}
+              {fullCalendar
+                .slice()
+                .sort((a, b) => new Date(a.date) - new Date(b.date))
+                .map((event) => (
+                  <li key={event.id} className="mx-4 text-gray-700 uppercase">
+                    <span className="font-bold">{event.artist}</span> -{' '}
+                    {formatDate(event.date)} at {event.time}
+                    {event.artist === "Death Cab for Cutie" && (
+                      <span className="text-red-500 font-bold"> (SOLD OUT)</span>
+                    )}
+                  </li>
+                ))}
             </ul>
           </div>
         </div>

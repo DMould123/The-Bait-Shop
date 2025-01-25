@@ -1,9 +1,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { formatDate } from '../utils/dateUtils'
 
 export default function Home ({ fullCalendar }) {
   const [showDescription, setShowDescription] = useState(false)
   const navigate = useNavigate()
+
+  // Sort hottest upcoming shows by date
+  const hottestUpcomingShows = fullCalendar
+    .filter(concert => ['Modest Mouse', 'Death Cab for Cutie', 'The Thrills', 'Rooney'].includes(concert.artist))
+    .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date
+    .slice(0, 4); // Get only the first four shows
 
   const handleBookTickets = (concert) => {
     if (concert.artist === "Death Cab for Cutie") {
@@ -12,11 +19,6 @@ export default function Home ({ fullCalendar }) {
     }
     navigate('/ticket-purchase', { state: { tickets: concert } })
   }
-
-
-  const hottestUpcomingShows = fullCalendar.filter(concert =>
-    ['Modest Mouse', 'Death Cab for Cutie', 'The Thrills', 'Rooney'].includes(concert.artist)
-  ).slice(0, 4);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -37,7 +39,7 @@ export default function Home ({ fullCalendar }) {
             1st Ever Appearance in CA
           </p>
           <p className="text-lg text-gray-800 mb-2">
-            {new Date(fullCalendar[0].date).toLocaleDateString()}
+            {formatDate(fullCalendar[0].date)}
           </p>
           <p className="text-lg text-gray-700 mb-2">The Bait Shop</p>
           <p className="text-lg text-gray-700 mb-2">Doors: 19:00</p>
@@ -92,7 +94,7 @@ export default function Home ({ fullCalendar }) {
                   </h3>
                 </div>
                 <div className="p-4">
-                  <p className="text-gray-600">{new Date(concert.date).toLocaleDateString()}</p>
+                  <p className="text-gray-600">{formatDate(concert.date)}</p>
                   <p className="text-gray-600">{concert.time}</p>
                   <p className="text-lg font-bold text-gray-800 mt-2">{concert.price}</p>
                   <button

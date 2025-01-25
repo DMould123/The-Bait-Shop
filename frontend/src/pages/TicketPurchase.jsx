@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
 import { useState } from 'react'
+import { formatDate } from '../utils/dateUtils'
 
 const stripePromise = loadStripe(
   'pk_test_51NpuV8JiXV88granpu14IbP89g0Tn2YLNmAjvNZffbDkbpUFpDNEiBDt9o9ACUS2rozL6UvLLLQV55miUOUIURPx00D7luQrbY'
@@ -57,7 +58,7 @@ export default function TicketPurchase() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold">{tickets.artist}</h1>
-      <p>Date: {tickets.date}</p>
+      <p>Date: {formatDate(tickets.date)}</p>
       <p>Time: {tickets.time}</p>
       <p>Price: {tickets.price}</p>
       <p className="mt-4"> {tickets.blurb}</p>
