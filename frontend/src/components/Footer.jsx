@@ -1,4 +1,5 @@
 import { FaWater } from 'react-icons/fa';
+import { SiMyspace, SiCocacola, SiMcdonalds, SiStubhub, SiTicketmaster  } from 'react-icons/si';
 
 export default function Footer() {
   return (
@@ -13,6 +14,13 @@ export default function Footer() {
           <p>Newport, CA 92663</p>
           <p>+1 (123) 456-7890</p>
           <p>info@thebaitshop.com</p>
+        </div>
+        <div className="flex justify-center space-x-4 mb-4">
+          <SiMyspace className="text-4xl" />
+          <SiCocacola className="text-4xl" />
+          <SiStubhub className="text-4xl" />
+          <SiMcdonalds className="text-3xl" />
+          <SiTicketmaster className="text-4xl" />
         </div>
         <div className="mt-8 text-gray-500 text-sm text-center">
           <p>&copy; {new Date().getFullYear()} The Bait Shop. All rights reserved.</p>
