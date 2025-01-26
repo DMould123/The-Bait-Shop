@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa'
 import { formatDate } from '../utils/dateUtils'
 
-export default function Navbar ({ fullCalendar }) {
+export default function Navbar({ fullCalendar }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -180,8 +180,11 @@ export default function Navbar ({ fullCalendar }) {
                   <li key={event.id} className="mx-4 text-gray-700 uppercase">
                     <span className="font-bold">{event.artist}</span> -{' '}
                     {formatDate(event.date)} at {event.time}
-                    {event.artist === "Death Cab for Cutie" && (
-                      <span className="text-red-500 font-bold"> (SOLD OUT)</span>
+                    {event.artist === 'Death Cab for Cutie' && (
+                      <span className="text-red-500 font-bold">
+                        {' '}
+                        (SOLD OUT)
+                      </span>
                     )}
                   </li>
                 ))}

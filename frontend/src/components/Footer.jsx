@@ -1,31 +1,44 @@
-import { FaWater } from 'react-icons/fa';
-import { SiMyspace, SiCocacola, SiMcdonalds, SiStubhub, SiTicketmaster  } from 'react-icons/si';
+import { FaWater } from 'react-icons/fa'
+import {
+  SiCocacola,
+  SiMcdonalds,
+  SiStubhub,
+  SiTicketmaster
+} from 'react-icons/si'
 
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-6 mt-16">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="mb-4">One of Newport County's most iconic places for music, concerts, and club experiences!</p>
-        <div className="mb-4">
-          <h3 className="font-semibold">
-            The Bait Shop <FaWater className="inline text-blue-500 text-1xl" />
-          </h3>
-          <p>456 Bay St</p>
-          <p>Newport, CA 92663</p>
-          <p>+1 (123) 456-7890</p>
-          <p>info@thebaitshop.com</p>
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        {/* Venue Information */}
+        <div className="text-center mb-4 md:mb-0">
+          <p className="text-lg font-bold">
+            The Bait Shop <FaWater className="inline text-blue-500 text-l" />
+          </p>
+          <p className="text-sm">456 Bay St, Newport, CA 92663</p>
+          <p className="text-sm">+1 (123) 456-7890</p>
+          <p className="text-sm">info@thebaitshop.com</p>
         </div>
-        <div className="flex justify-center space-x-4 mb-4">
-          <SiMyspace className="text-4xl" />
-          <SiCocacola className="text-4xl" />
-          <SiStubhub className="text-4xl" />
-          <SiMcdonalds className="text-3xl" />
-          <SiTicketmaster className="text-4xl" />
-        </div>
-        <div className="mt-8 text-gray-500 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} The Bait Shop. All rights reserved.</p>
+
+        {/* Partners Section */}
+        <div className="text-center">
+          <h3 className="text-lg font-bold mb-2">Our Partners</h3>
+          <div className="flex justify-center space-x-4">
+            <SiCocacola className="text-4xl" />
+            <SiStubhub className="text-4xl" />
+            <SiMcdonalds className="text-3xl" />
+            <SiTicketmaster className="text-4xl" />
+          </div>
         </div>
       </div>
+
+      <div className="mt-8 text-gray-500 text-sm text-center">
+        <p>
+          &copy; {new Date().getFullYear()} The Bait Shop{' '}
+          <FaWater className="inline text-blue-500 text-l" /> All rights
+          reserved.
+        </p>
+      </div>
     </footer>
-  );
+  )
 }

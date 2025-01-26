@@ -1,4 +1,4 @@
-import { FaEnvelope, FaWater } from 'react-icons/fa';
+import { FaEnvelope, FaWater } from 'react-icons/fa'
 
 export default function Newsletter() {
   return (
@@ -13,7 +13,8 @@ export default function Newsletter() {
         Stay updated on upcoming shows, events, and exclusive offers!
       </p>
       <p className="text-gray-600 mb-4 text-center">
-        Register your email to never miss out on the hottest bands coming to play for you in Newport County.
+        Register your email to never miss out on the hottest bands coming to
+        play for you in Newport County.
       </p>
       <form
         action="https://formspree.io/f/mjvdqpav"
@@ -38,5 +39,5 @@ export default function Newsletter() {
         </button>
       </form>
     </div>
-  );
+  )
 }

@@ -2,20 +2,24 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../utils/dateUtils'
 
-export default function Home ({ fullCalendar }) {
+export default function Home({ fullCalendar }) {
   const [showDescription, setShowDescription] = useState(false)
   const navigate = useNavigate()
 
   // Sort hottest upcoming shows by date
   const hottestUpcomingShows = fullCalendar
-    .filter(concert => ['Modest Mouse', 'Death Cab for Cutie', 'The Thrills', 'Rooney'].includes(concert.artist))
-    .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date
-    .slice(0, 4); // Get only the first four shows
+    .filter((concert) =>
+      ['Modest Mouse', 'Death Cab for Cutie', 'The Thrills', 'Rooney'].includes(
+        concert.artist
+      )
+    )
+    .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by gig date
+    .slice(0, 4) // Get only the first four gigs
 
   const handleBookTickets = (concert) => {
-    if (concert.artist === "Death Cab for Cutie") {
-      alert("Tickets for this concert are sold out.");
-      return;
+    if (concert.artist === 'Death Cab for Cutie') {
+      alert('Tickets for this concert are sold out.')
+      return
     }
     navigate('/ticket-purchase', { state: { tickets: concert } })
   }
@@ -45,7 +49,9 @@ export default function Home ({ fullCalendar }) {
           <p className="text-lg text-gray-700 mb-2">Doors: 19:00</p>
           <p className="text-lg text-gray-700 mb-2">Show: 20:00</p>
           <p className="text-lg text-gray-700 mb-2">Support: The Bravery</p>
-          <p className="text-lg font-bold text-red-600 mb-4">{fullCalendar[0].price}</p>
+          <p className="text-lg font-bold text-red-600 mb-4">
+            {fullCalendar[0].price}
+          </p>
           <button
             className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto"
             onClick={() => handleBookTickets(fullCalendar[0])}
@@ -88,21 +94,31 @@ export default function Home ({ fullCalendar }) {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <h3 className="text-xl font-bold text-white absolute bottom-0 left-0 p-2">
                     {concert.artist}
-                    {concert.artist === "Death Cab for Cutie" && (
-                      <span className="text-red-500 font-bold ml-2">Sold Out</span>
+                    {concert.artist === 'Death Cab for Cutie' && (
+                      <span className="text-red-500 font-bold ml-2">
+                        Sold Out
+                      </span>
                     )}
                   </h3>
                 </div>
                 <div className="p-4">
                   <p className="text-gray-600">{formatDate(concert.date)}</p>
                   <p className="text-gray-600">{concert.time}</p>
-                  <p className="text-lg font-bold text-gray-800 mt-2">{concert.price}</p>
+                  <p className="text-lg font-bold text-gray-800 mt-2">
+                    {concert.price}
+                  </p>
                   <button
-                    className={`mt-4 bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors ${concert.artist === "Death Cab for Cutie" ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    className={`mt-4 bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors ${
+                      concert.artist === 'Death Cab for Cutie'
+                        ? 'opacity-50 cursor-not-allowed'
+                        : ''
+                    }`}
                     onClick={() => handleBookTickets(concert)}
-                    disabled={concert.artist === "Death Cab for Cutie"}
+                    disabled={concert.artist === 'Death Cab for Cutie'}
                   >
-                    {concert.artist === "Death Cab for Cutie" ? 'Sold Out' : 'Book Now'}
+                    {concert.artist === 'Death Cab for Cutie'
+                      ? 'Sold Out'
+                      : 'Book Now'}
                   </button>
                 </div>
               </div>

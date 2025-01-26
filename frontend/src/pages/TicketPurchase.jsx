@@ -16,8 +16,8 @@ export default function TicketPurchase() {
   console.log(tickets)
 
   const handleCheckout = async () => {
-    if (tickets.artist === "Death Cab for Cutie") {
-      alert("Tickets for this concert are sold out.")
+    if (tickets.artist === 'Death Cab for Cutie') {
+      alert('Tickets for this concert are sold out.')
       return
     }
 
@@ -69,7 +69,7 @@ export default function TicketPurchase() {
           <iframe
             width="50%"
             height="315"
-            src={tickets.yt.replace("watch?v=", "embed/")}
+            src={tickets.yt.replace('watch?v=', 'embed/')}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -78,17 +78,21 @@ export default function TicketPurchase() {
         </div>
       )}
 
-      {tickets.artist === "Death Cab for Cutie" && (
+      {tickets.artist === 'Death Cab for Cutie' && (
         <div className="mt-4 text-red-600 font-bold">
           This concert is sold out.
         </div>
       )}
 
       <div className="mt-4">
-        <label htmlFor="quantity" className="block text-lg font-semibold">Quantity:</label>
+        <label htmlFor="quantity" className="block text-lg font-semibold">
+          Quantity:
+        </label>
         <div className="flex items-center mt-2">
-          {tickets.artist === "Death Cab for Cutie" ? (
-            <span className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center">-</span>
+          {tickets.artist === 'Death Cab for Cutie' ? (
+            <span className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center">
+              -
+            </span>
           ) : (
             <input
               type="number"
@@ -105,11 +109,17 @@ export default function TicketPurchase() {
 
       <div className="mt-4">
         <button
-          className={`bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg ${tickets.artist === "Death Cab for Cutie" ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg ${
+            tickets.artist === 'Death Cab for Cutie'
+              ? 'opacity-50 cursor-not-allowed'
+              : ''
+          }`}
           onClick={handleCheckout}
-          disabled={tickets.artist === "Death Cab for Cutie"}
+          disabled={tickets.artist === 'Death Cab for Cutie'}
         >
-          {tickets.artist === "Death Cab for Cutie" ? 'Sold Out' : 'Proceed to Checkout'}
+          {tickets.artist === 'Death Cab for Cutie'
+            ? 'Sold Out'
+            : 'Proceed to Checkout'}
         </button>
       </div>
     </div>
