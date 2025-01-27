@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Calendar from './pages/Calendar'
-import Restaurant from './pages/Restaurant'
+import Merch from './pages/Merch'
 import Faqs from './pages/Faqs'
 import About from './pages/About'
 import Home from './pages/Home'
@@ -136,7 +136,7 @@ export default function App() {
               path="/calendar"
               element={<Calendar fullCalendar={fullCalendar} />}
             />
-            <Route path="/restaurant" element={<Restaurant />} />
+            <Route path="/merch" element={<Merch />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/about" element={<About />} />
             <Route path="/success" element={<Success />} />
