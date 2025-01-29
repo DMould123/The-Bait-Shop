@@ -1,10 +1,10 @@
-import { FaWater } from 'react-icons/fa'
+import { FaWater } from 'react-icons/fa';
 import {
   SiCocacola,
   SiMcdonalds,
   SiStubhub,
   SiTicketmaster
-} from 'react-icons/si'
+} from 'react-icons/si';
 
 export default function Footer() {
   return (
@@ -24,10 +24,10 @@ export default function Footer() {
         <div className="text-center">
           <h3 className="text-lg font-bold mb-2">Our Partners</h3>
           <div className="flex justify-center space-x-4">
-            <SiCocacola className="text-4xl" />
-            <SiStubhub className="text-4xl" />
-            <SiMcdonalds className="text-3xl" />
-            <SiTicketmaster className="text-4xl" />
+            <SiCocacola className="text-6xl" />
+            <SiStubhub className="text-6xl" />
+            <SiMcdonalds className="text-5xl" />
+            <SiTicketmaster className="text-7xl" />
           </div>
         </div>
       </div>
@@ -40,5 +40,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
