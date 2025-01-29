@@ -13,42 +13,53 @@ export default function TicketPurchase() {
   const [quantity, setQuantity] = useState(1)
   const navigate = useNavigate()
 
-  console.log(tickets)
-
   const handleCheckout = async () => {
     if (tickets.artist === 'Death Cab for Cutie') {
-      alert('Tickets for this concert are sold out.')
-      return
+      alert('Tickets for this concert are sold out.');
+      return;
     }
 
-    const stripe = await stripePromise
+    try {
+      const stripe = await stripePromise;
 
-    const response = await fetch(
-      'http://localhost:3001/create-checkout-session',
-      {
+      const response = await fetch('http://localhost:3001/create-checkout-session', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           items: [
             {
               name: tickets.artist,
               price: parseFloat(tickets.price.replace('$', '')),
-              quantity: quantity
-            }
-          ]
-        })
+              quantity: quantity,
+            },
+          ],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to create checkout session: ${response.statusText}`);
       }
-    )
 
-    const session = await response.json()
-    const result = await stripe.redirectToCheckout({ sessionId: session.id })
+      const session = await response.json();
 
-    if (result.error) {
-      console.error(result.error.message)
+      if (!session.id) {
+        throw new Error('Invalid session ID received from server.');
+      }
+
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        console.error('Stripe checkout error:', result.error.message);
+        alert('Error redirecting to checkout: ' + result.error.message);
+      }
+    } catch (error) {
+      console.error('Checkout Error:', error);
+      alert('An error occurred during checkout: ' + error.message);
     }
-  }
+  };
+
 
   const handleQuantityChange = (e) => {
     const value = Math.min(Math.max(1, e.target.value), 20)

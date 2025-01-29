@@ -1,10 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../utils/dateUtils'
+import { RotatingLines } from "react-loader-spinner"
 
 export default function Home({ fullCalendar }) {
   const [showDescription, setShowDescription] = useState(false)
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+            <RotatingLines
+      strokeColor="grey"
+      strokeWidth="5"
+      animationDuration="0.75"
+      width="96"
+      visible={true}
+    />
+      </div>
+    )
+  }
 
   // Sort hottest upcoming shows by date
   const hottestUpcomingShows = fullCalendar

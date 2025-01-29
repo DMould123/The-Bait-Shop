@@ -149,10 +149,10 @@ export default function Navbar({ fullCalendar }) {
               Calendar
             </Link>
             <Link
-              to="/restaurant"
+              to="/merch"
               className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
             >
-              Restaurant
+            Merch
             </Link>
             <Link
               to="/faqs"
