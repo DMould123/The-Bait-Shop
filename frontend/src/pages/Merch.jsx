@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import { useState } from 'react'
+import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe('pk_test_51NpuV8JiXV88granpu14IbP89g0Tn2YLNmAjvNZffbDkbpUFpDNEiBDt9o9ACUS2rozL6UvLLLQV55miUOUIURPx00D7luQrbY');
+const stripePromise = loadStripe(
+  'pk_test_51NpuV8JiXV88granpu14IbP89g0Tn2YLNmAjvNZffbDkbpUFpDNEiBDt9o9ACUS2rozL6UvLLLQV55miUOUIURPx00D7luQrbY'
+)
 
 const merchItems = {
   tShirts: [
@@ -11,7 +13,7 @@ const merchItems = {
       description: 'Stylish venue T-shirt.',
       price: '$25.00',
       img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737801049/The_Bait_Shop/tshirt_v8ctpi-removebg-preview_smcuqv.png',
-      sizes: ['Small', 'Medium', 'Large', 'X-Large'],
+      sizes: ['Small', 'Medium', 'Large', 'X-Large']
     },
     {
       id: 2,
@@ -19,7 +21,7 @@ const merchItems = {
       description: 'Limited edition Bait Shop T-shirt.',
       price: '$25.00',
       img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1738016065/The_Bait_Shop/octshirtlogo2a-removebg-preview_vjqvcg.png',
-      sizes: ['Small', 'Medium', 'Large', 'X-Large'],
+      sizes: ['Small', 'Medium', 'Large', 'X-Large']
     },
     {
       id: 3,
@@ -27,8 +29,8 @@ const merchItems = {
       description: 'Limited edition Bait Shop T-shirt.',
       price: '$25.00',
       img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737800973/The_Bait_Shop/thirt2_yuqknm.png',
-      sizes: ['Small', 'Medium', 'Large', 'X-Large'],
-    },
+      sizes: ['Small', 'Medium', 'Large', 'X-Large']
+    }
   ],
   vinyls: [
     {
@@ -36,22 +38,22 @@ const merchItems = {
       title: 'Transatlanticism - Death Cab For Cutie',
       description: 'Vinyl LP from Death Cab For Cutie.',
       price: '$40.00',
-      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1738018789/The_Bait_Shop/129066-death-cab-for-cutie-transatlanticism-LP-1-6478684036889_kx6bla.jpg',
+      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1738018789/The_Bait_Shop/129066-death-cab-for-cutie-transatlanticism-LP-1-6478684036889_kx6bla.jpg'
     },
     {
       id: 5,
       title: 'The Killers - Hot Fuss',
       description: 'Iconic album on vinyl.',
       price: '$40.00',
-      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737934600/The_Bait_Shop/0602547859303_cilaec.webp',
+      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737934600/The_Bait_Shop/0602547859303_cilaec.webp'
     },
     {
       id: 6,
       title: 'Rooney - Self-Titled',
       description: 'Classic Rooney debut album.',
       price: '$40.00',
-      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1738020042/The_Bait_Shop/169415-rooney-rooney-LP-671118b3e54fd_nu8uhd.jpg',
-    },
+      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1738020042/The_Bait_Shop/169415-rooney-rooney-LP-671118b3e54fd_nu8uhd.jpg'
+    }
   ],
   posters: [
     {
@@ -59,40 +61,43 @@ const merchItems = {
       title: 'Concert Poster',
       description: 'High-quality poster of The Killers.',
       price: '$20.00',
-      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737801111/The_Bait_Shop/killerstheocposter_q7zakd-removebg-preview_aa2lwa.png',
-    },
-  ],
-};
+      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737801111/The_Bait_Shop/killerstheocposter_q7zakd-removebg-preview_aa2lwa.png'
+    }
+  ]
+}
 
 export default function Merch() {
-  const [selectedSize, setSelectedSize] = useState({});
+  const [selectedSize, setSelectedSize] = useState({})
 
   const handleCheckout = async (item) => {
-    const stripe = await stripePromise;
+    const stripe = await stripePromise
 
-    const response = await fetch('http://localhost:3001/create-checkout-session', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        items: [
-          {
-            name: `${item.title} - Size: ${selectedSize[item.id]}`,
-            price: parseFloat(item.price.replace('$', '')),
-            quantity: 1,
-          },
-        ],
-      }),
-    });
+    const response = await fetch(
+      'http://localhost:3001/create-checkout-session',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          items: [
+            {
+              name: `${item.title} - Size: ${selectedSize[item.id]}`,
+              price: parseFloat(item.price.replace('$', '')),
+              quantity: 1
+            }
+          ]
+        })
+      }
+    )
 
-    const session = await response.json();
-    const result = await stripe.redirectToCheckout({ sessionId: session.id });
+    const session = await response.json()
+    const result = await stripe.redirectToCheckout({ sessionId: session.id })
 
     if (result.error) {
-      console.error(result.error.message);
+      console.error(result.error.message)
     }
-  };
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
@@ -119,12 +124,21 @@ export default function Merch() {
               <p className="text-lg font-bold mt-2">{item.price}</p>
               <select
                 className="mt-2 border border-gray-300 rounded-lg p-2"
-                onChange={(e) => setSelectedSize({ ...selectedSize, [item.id]: e.target.value })}
+                onChange={(e) =>
+                  setSelectedSize({
+                    ...selectedSize,
+                    [item.id]: e.target.value
+                  })
+                }
                 defaultValue=""
               >
-                <option value="" disabled>Select Size</option>
+                <option value="" disabled>
+                  Select Size
+                </option>
                 {item.sizes.map((size) => (
-                  <option key={size} value={size}>{size}</option>
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
                 ))}
               </select>
               <button
@@ -199,5 +213,5 @@ export default function Merch() {
         ))}
       </div>
     </div>
-  );
+  )
 }

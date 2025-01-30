@@ -32,7 +32,6 @@ app.post('/create-checkout-session', async (req, res) => {
       cancel_url: 'http://localhost:5173/cancel',
     });
 
-    console.log('Session created:', session);
     res.json({ id: session.id });
   } catch (error) {
     console.error(error);
@@ -45,5 +44,5 @@ app.use(cors({
 }));
 
 app.listen(3001, () => {
-  console.log('Server is running on port 3001');
+  console.log('Server is running on port 3001 🚀');
 });

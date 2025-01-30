@@ -152,7 +152,7 @@ export default function Navbar({ fullCalendar }) {
               to="/merch"
               className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
             >
-            Merch
+              Merch
             </Link>
             <Link
               to="/faqs"

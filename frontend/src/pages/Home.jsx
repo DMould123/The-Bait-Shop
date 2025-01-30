@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../utils/dateUtils'
-import { RotatingLines } from "react-loader-spinner"
+import { RotatingLines } from 'react-loader-spinner'
 
 export default function Home({ fullCalendar }) {
   const [showDescription, setShowDescription] = useState(false)
@@ -19,13 +19,13 @@ export default function Home({ fullCalendar }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-            <RotatingLines
-      strokeColor="grey"
-      strokeWidth="5"
-      animationDuration="0.75"
-      width="96"
-      visible={true}
-    />
+        <RotatingLines
+          strokeColor="grey"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="96"
+          visible={true}
+        />
       </div>
     )
   }

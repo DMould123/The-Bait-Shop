@@ -15,51 +15,55 @@ export default function TicketPurchase() {
 
   const handleCheckout = async () => {
     if (tickets.artist === 'Death Cab for Cutie') {
-      alert('Tickets for this concert are sold out.');
-      return;
+      alert('Tickets for this concert are sold out.')
+      return
     }
 
     try {
-      const stripe = await stripePromise;
+      const stripe = await stripePromise
 
-      const response = await fetch('http://localhost:3001/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items: [
-            {
-              name: tickets.artist,
-              price: parseFloat(tickets.price.replace('$', '')),
-              quantity: quantity,
-            },
-          ],
-        }),
-      });
+      const response = await fetch(
+        'http://localhost:3001/create-checkout-session',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            items: [
+              {
+                name: tickets.artist,
+                price: parseFloat(tickets.price.replace('$', '')),
+                quantity: quantity
+              }
+            ]
+          })
+        }
+      )
 
       if (!response.ok) {
-        throw new Error(`Failed to create checkout session: ${response.statusText}`);
+        throw new Error(
+          `Failed to create checkout session: ${response.statusText}`
+        )
       }
 
-      const session = await response.json();
+      const session = await response.json()
 
       if (!session.id) {
-        throw new Error('Invalid session ID received from server.');
+        throw new Error('Invalid session ID received from server.')
       }
 
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+      const result = await stripe.redirectToCheckout({ sessionId: session.id })
 
       if (result.error) {
-        console.error('Stripe checkout error:', result.error.message);
-        alert('Error redirecting to checkout: ' + result.error.message);
+        console.error('Stripe checkout error:', result.error.message)
+        alert('Error redirecting to checkout: ' + result.error.message)
       }
     } catch (error) {
-      console.error('Checkout Error:', error);
-      alert('An error occurred during checkout: ' + error.message);
+      console.error('Checkout Error:', error)
+      alert('An error occurred during checkout: ' + error.message)
     }
-  };
-
+  }
 
   const handleQuantityChange = (e) => {
     const value = Math.min(Math.max(1, e.target.value), 20)

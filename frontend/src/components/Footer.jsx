@@ -1,10 +1,10 @@
-import { FaWater } from 'react-icons/fa';
+import { FaWater } from 'react-icons/fa'
 import {
   SiCocacola,
   SiMcdonalds,
   SiStubhub,
   SiTicketmaster
-} from 'react-icons/si';
+} from 'react-icons/si'
 
 export default function Footer() {
   return (
@@ -40,5 +40,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
