@@ -3,9 +3,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { useState } from 'react'
 import { formatDate } from '../utils/dateUtils'
 
-const stripePromise = loadStripe(
-  'pk_test_51NpuV8JiXV88granpu14IbP89g0Tn2YLNmAjvNZffbDkbpUFpDNEiBDt9o9ACUS2rozL6UvLLLQV55miUOUIURPx00D7luQrbY'
-)
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 export default function TicketPurchase() {
   const location = useLocation()
