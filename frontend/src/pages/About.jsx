@@ -31,18 +31,21 @@ export default function About () {
       <div className="flex flex-col items-center mb-8">
         <img
           src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799918/The_Bait_Shop/baitshop_w7lejg.png"
-          alt="The Bait Shop"
+          alt="The Bait Shop - Exterior view"
+          loading="lazy"
           className="w-full h-auto rounded-lg shadow-md mb-4"
         />
         <div className="flex space-x-4">
           <img
             src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799927/The_Bait_Shop/baitshop-bar_an53dl.png"
-            alt="Bait Shop Interior"
+            alt="Bait Shop Interior - Bar Area"
+            loading="lazy"
             className="w-1/2 h-auto rounded-lg shadow-md"
           />
           <img
             src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737799926/The_Bait_Shop/baitshop-indoors_gdsxmv.png"
-            alt="Bait Shop Event"
+            alt="Bait Shop Event - Indoor"
+            loading="lazy"
             className="w-1/2 h-auto rounded-lg shadow-md"
           />
         </div>
