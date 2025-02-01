@@ -115,6 +115,7 @@ export default function Merch() {
               <img
                 src={item.img}
                 alt={item.title}
+                loading="lazy"
                 className="max-h-full max-w-full object-contain"
               />
             </div>
@@ -165,6 +166,7 @@ export default function Merch() {
               <img
                 src={item.img}
                 alt={item.title}
+                loading="lazy"
                 className="max-h-full max-w-full object-contain"
               />
             </div>
@@ -195,6 +197,7 @@ export default function Merch() {
               <img
                 src={item.img}
                 alt={item.title}
+                loading="lazy"
                 className="max-h-full max-w-full object-contain"
               />
             </div>

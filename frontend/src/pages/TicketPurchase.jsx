@@ -85,6 +85,7 @@ export default function TicketPurchase() {
             src={tickets.yt.replace('watch?v=', 'embed/')}
             title="YouTube video player"
             frameBorder="0"
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

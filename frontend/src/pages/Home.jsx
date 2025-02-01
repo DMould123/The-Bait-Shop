@@ -55,7 +55,8 @@ export default function Home({ fullCalendar }) {
         <div className="w-full md:w-2/3">
           <img
             src={fullCalendar[0].img}
-            alt={fullCalendar[0].artist}
+            alt={'Images of bands playing at upcoming concerts'}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>

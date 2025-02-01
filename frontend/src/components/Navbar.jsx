@@ -22,6 +22,7 @@ export default function Navbar({ fullCalendar }) {
               <img
                 src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737800969/The_Bait_Shop/logo_l8chx5.png"
                 alt="The Bait Shop Logo"
+                  loading="lazy"
                 className="h-16 w-auto sm:h-20 md:h-24 hover:opacity-90 transition-opacity"
               />
             </Link>
