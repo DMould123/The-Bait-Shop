@@ -6,7 +6,7 @@ The Bait Shop is a web application designed to provide users with an engaging pl
 
 ## Objectives 🎯
 
-The objectives of the Wedding Budget Planner project include:
+The objectives of the Bait Shop project include:
 
 - 🎟️ Facilitate ticket purchases: Allow users to easily book tickets for concerts and events.
 - 🛍️ Merchandise shopping: Provide a platform for users to browse and purchase merchandise related to the events.
@@ -75,7 +75,7 @@ npm run dev
 
 - 🎉 User-friendly interface: Easy navigation and a clean design for a better user experience.
 - 🎟️ Ticket booking: Users can view and purchase tickets for upcoming concerts.
-- 🛍️ Merchandise store: Browse and buy merchandise related to the events.
+- 🛍️ Merchandise store: Browse and buy merchandise related to the upcoming events.
 - 📅 Event details: Comprehensive information about each concert, including artist, date, and time.
 - 💰 Payment processing: Secure and efficient payment processing using Stripe.
 
