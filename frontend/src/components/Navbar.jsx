@@ -13,7 +13,7 @@ export default function Navbar({ fullCalendar }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-white shadow-md" role="navigation">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo with responsive size */}
@@ -32,25 +32,25 @@ export default function Navbar({ fullCalendar }) {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <Link
               to="/calendar"
-              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               Calendar
             </Link>
             <Link
               to="/merch"
-              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               Merch
             </Link>
             <Link
               to="/faqs"
-              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               FAQs
             </Link>
             <Link
               to="/about"
-              className="text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-medium"
+              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               About Us
             </Link>
@@ -63,6 +63,7 @@ export default function Navbar({ fullCalendar }) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="Instagram"
             >
               <FaInstagramSquare className="h-6 w-6" />
             </a>
@@ -71,6 +72,7 @@ export default function Navbar({ fullCalendar }) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="Facebook"
             >
               <FaFacebook className="h-6 w-6" />
             </a>
@@ -79,6 +81,7 @@ export default function Navbar({ fullCalendar }) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="Twitter"
             >
               <FaTwitter className="h-6 w-6" />
             </a>
@@ -87,6 +90,7 @@ export default function Navbar({ fullCalendar }) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="TikTok"
             >
               <FaTiktok className="h-6 w-6" />
             </a>
@@ -95,6 +99,7 @@ export default function Navbar({ fullCalendar }) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="Spotify"
             >
               <FaSpotify className="h-6 w-6" />
             </a>

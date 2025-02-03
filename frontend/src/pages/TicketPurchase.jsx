@@ -116,6 +116,7 @@ export default function TicketPurchase() {
               value={quantity}
               onChange={handleQuantityChange}
               className="border border-gray-300 rounded-lg py-2 px-3 w-20 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+              aria-label="Select ticket quantity"
             />
           )}
         </div>

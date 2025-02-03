@@ -55,7 +55,7 @@ export default function Home({ fullCalendar }) {
         <div className="w-full md:w-2/3">
           <img
             src={fullCalendar[0].img}
-            alt={'Images of bands playing at upcoming concerts'}
+            alt={'Images of bands upcoming concerts'}
             loading="lazy"
             className="w-full h-full object-cover"
           />
@@ -80,6 +80,7 @@ export default function Home({ fullCalendar }) {
           <button
             className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg flex items-center text-sm sm:text-lg mx-auto"
             onClick={() => handleBookTickets(fullCalendar[0])}
+            aria-label={`Book tickets for ${fullCalendar[0].artist}`}
           >
             <span className="mr-2">🎟️</span> Book Tickets
           </button>
