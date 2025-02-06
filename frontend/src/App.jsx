@@ -115,7 +115,7 @@ export default function App() {
     {
       id: 10,
       artist: 'The Subways',
-      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737803159/The_Bait_Shop/Subwaysoc_enhanced_zg7c0w.png',
+      img: 'https://res.cloudinary.com/dele4dvi9/image/upload/v1737808920/The_Bait_Shop/Subwaysoc_enhanced_arbmpi.png',
       date: '2005-11-17',
       time: '20:00',
       price: '$20',

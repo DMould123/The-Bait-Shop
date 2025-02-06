@@ -24,6 +24,14 @@ export default function Calendar ({ fullCalendar })  {
               key={event.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
+              <div className="relative">
+                <img
+                  src={event.img}
+                  alt={event.artist}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black opacity-30" />
+              </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
                   {event.artist}
