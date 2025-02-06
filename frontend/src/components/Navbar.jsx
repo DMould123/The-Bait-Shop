@@ -22,7 +22,7 @@ export default function Navbar({ fullCalendar }) {
               <img
                 src="https://res.cloudinary.com/dele4dvi9/image/upload/v1737800969/The_Bait_Shop/logo_l8chx5.png"
                 alt="The Bait Shop Logo"
-                  loading="lazy"
+                loading="lazy"
                 className="h-16 w-auto sm:h-20 md:h-24 hover:opacity-90 transition-opacity"
               />
             </Link>
@@ -32,25 +32,25 @@ export default function Navbar({ fullCalendar }) {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <Link
               to="/calendar"
-              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
+              className="text-gray-800 hover:text-gray-600 text-2xl font-bold transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               Calendar
             </Link>
             <Link
               to="/merch"
-              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
+              className="text-gray-800 hover:text-gray-600 text-2xl font-bold transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               Merch
             </Link>
             <Link
               to="/faqs"
-              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
+              className="text-gray-800 hover:text-gray-600 text-2xl font-bold transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               FAQs
             </Link>
             <Link
               to="/about"
-              className="text-gray-800 hover:text-gray-600 text-xl font-medium transform transition-transform duration-200 hover:scale-105 px-3 py-2"
+              className="text-gray-800 hover:text-gray-600 text-2xl font-bold transform transition-transform duration-200 hover:scale-105 px-3 py-2"
             >
               About Us
             </Link>
@@ -150,25 +150,25 @@ export default function Navbar({ fullCalendar }) {
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2">
             <Link
               to="/calendar"
-              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-bold"
             >
               Calendar
             </Link>
             <Link
               to="/merch"
-              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-bold"
             >
               Merch
             </Link>
             <Link
               to="/faqs"
-              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-bold"
             >
               FAQs
             </Link>
             <Link
               to="/about"
-              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-medium"
+              className="block text-gray-800 hover:text-gray-600 px-3 py-2 text-lg font-bold"
             >
               About Us
             </Link>

@@ -2,11 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Caveat', cursive;
+  line-height: 1.6; /* Improve readability */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
 @keyframes marquee {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 60s linear infinite; /* Slower speed for better readability */
+}
+
+/* Example for headings */
+h1, h2, h3 {
+  font-family: 'Caveat', cursive;
+  font-weight: 700; /* Bold for headings */
+  color: #2d3748; /* Dark gray for better contrast */
+}
+
+/* Example for regular text */
+p {
+  font-size: 1.5rem; /* Increased size for paragraphs */
+  color: #4a5568; /* Medium gray for better readability */
+}
+
+h1 {
+  font-size: 4rem; /* Increased size for better visibility */
+}
+
+h2 {
+  font-size: 3rem; /* Increased size for better visibility */
+}
+
+h3 {
+  font-size: 2.5rem; /* Increased size for better visibility */
+}
+
+a {
+  font-size: 1.5rem; /* Increased size for links */
+  color: #3182ce; /* Blue color for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+  color: #2b6cb0; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* Smaller size for mobile */
+  }
+
+  h2 {
+    font-size: 2.5rem; /* Smaller size for mobile */
+  }
+
+  h3 {
+    font-size: 2rem; /* Smaller size for mobile */
+  }
+
+  p {
+    font-size: 1.25rem; /* Smaller size for mobile */
+  }
+
+  a {
+    font-size: 1.25rem; /* Smaller size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem; /* Further reduce size for small screens */
+  }
+
+  h2 {
+    font-size: 2rem; /* Further reduce size for small screens */
+  }
+
+  h3 {
+    font-size: 1.75rem; /* Further reduce size for small screens */
+  }
+
+  p {
+    font-size: 1rem; /* Further reduce size for small screens */
+  }
+
+  a {
+    font-size: 1rem; /* Further reduce size for small screens */
+  }
 }

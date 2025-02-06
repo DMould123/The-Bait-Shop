@@ -79,21 +79,22 @@ export default function TicketPurchase() {
       {tickets.yt && (
         <div className="mt-4">
           <h2 className="text-lg font-semibold">Watch on YouTube:</h2>
-          <iframe
-            width="50%"
-            height="315"
-            src={tickets.yt.replace('watch?v=', 'embed/')}
-            title="YouTube video player"
-            frameBorder="0"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src={tickets.yt.replace('watch?v=', 'embed/')}
+              title="YouTube video player"
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       )}
 
       {tickets.artist === 'Death Cab for Cutie' && (
-        <div className="mt-4 text-red-600 font-bold">
+        <div className="mt-4 text-red-600 font-bold text-2xl">
           This concert is sold out.
         </div>
       )}
@@ -136,6 +137,28 @@ export default function TicketPurchase() {
             ? 'Sold Out'
             : 'Proceed to Checkout'}
         </button>
+      </div>
+
+      <div className="bg-100 p-4 rounded-lg mt-2 overflow-hidden">
+        <div className="whitespace-nowrap overflow-hidden">
+          <ul className="inline-flex animate-marquee">
+            {fullCalendar
+              .slice()
+              .sort((a, b) => new Date(a.date) - new Date(b.date))
+              .map((event) => (
+                <li key={event.id} className="mx-4 text-gray-800 uppercase text-lg md:text-gray-700">
+                  <span className="font-extrabold">{event.artist}</span> -{' '}
+                  {formatDate(event.date)} at {event.time}
+                  {event.artist === 'Death Cab for Cutie' && (
+                    <span className="text-red-500 font-bold">
+                      {' '}
+                      (SOLD OUT)
+                    </span>
+                  )}
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   )

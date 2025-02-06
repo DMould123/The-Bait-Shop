@@ -12,17 +12,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         {/* Venue Information */}
         <div className="text-center mb-4 md:mb-0">
-          <p className="text-lg font-bold">
+          <p className="text-xl text-white font-bold">
             The Bait Shop <FaWater className="inline text-blue-500 text-l" />
           </p>
-          <p className="text-sm">456 Bay St, Newport, CA 92663</p>
-          <p className="text-sm">+1 (123) 456-7890</p>
-          <p className="text-sm">info@thebaitshop.com</p>
+          <p className="text-lg text-white">456 Bay St, Newport, CA 92663</p>
+          <p className="text-lg text-white">+1 (123) 456-7890</p>
+          <p className="text-lg text-white">info@thebaitshop.com</p>
         </div>
 
         {/* Partners Section */}
-        <div className="text-center">
-          <h3 className="text-lg font-bold mb-2">Our Partners</h3>
+        <div className="text-center ">
+          <h3 className="text-xl font-bold mb-2 text-white">Our Partners</h3>
           <div className="flex justify-center space-x-4">
             <SiCocacola className="text-6xl" />
             <SiStubhub className="text-6xl" />
@@ -32,8 +32,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 text-gray-500 text-sm text-center">
-        <p>
+      <div className="mt-8 text-white text-lg text-center">
+        <p className="text-white">
           &copy; {new Date().getFullYear()} The Bait Shop{' '}
           <FaWater className="inline text-blue-500 text-l" /> All rights
           reserved.

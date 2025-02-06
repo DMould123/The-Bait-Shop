@@ -65,7 +65,7 @@ export default function Home({ fullCalendar }) {
             {fullCalendar[0].artist}
           </h1>
           <p className="text-xl font-semibold text-green-500 mb-4">
-            1st Ever Appearance in CA
+            First Ever Appearance in CA
           </p>
           <p className="text-lg text-gray-800 mb-2">
             {formatDate(fullCalendar[0].date)}
